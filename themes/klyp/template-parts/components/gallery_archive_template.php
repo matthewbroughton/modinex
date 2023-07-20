@@ -1,7 +1,7 @@
-<div class="section-product-list__masonry-item section-gallery-list__masonry-item pl-8 mb-8 w-full max-w-full md:max-w-[50%] lg:max-w-[33%]" data-maxpage="<?= ($maxPageNumber); ?>">
-    <div class="position-relative">
-        <a href="<?php echo $gallery_image_url; ?>" class="mn-product-pop-btn">
-            <img src="<?= $gallery_image_url; ?>" class="img-fluid">
+<div class="section-gallery-list__masonry-item" data-maxpage="<?= ($maxPageNumber); ?>">
+    <div class="flex flex-col">
+        <a href="<?php echo $gallery_image_url; ?>" class="aspect-h-9 aspect-w-16 mn-product-pop-btn">
+            <img src="<?= $gallery_image_url; ?>" class="img-fluid object-cover h-full w-full">
         </a>
         <div class="section-product-list__masonry-txt mt-4">
             <h2 class="section-product-list__masonry-title">

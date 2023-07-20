@@ -67,7 +67,7 @@
                             <?php if ($column['subtitle']) : ?>
                             <h4 class="text-sm text-gray-400"><?= $column['subtitle'] ?></h4>
                             <?php endif; ?>
-                            <h2 class="text-2xl mb-2"><?= $column['title']; ?></h2>
+                            <h2 class="text-2xl mb-2 capitalize"><?= $column['title']; ?></h2>
                             <?php if(! empty($column['feature_description'])) : ?>
                                 <div class="mb-4">
                                     <?= $column['feature_description']; ?>

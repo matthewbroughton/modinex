@@ -63,8 +63,8 @@ foreach ($level_1_categories as $level_1_category) {
             </h2>
         </div>
         <hr class="border-t w-full my-8 border-black">
-        <div class="flex justify-content-end -ml-8">
-            <div class="flex-grow-0 flex-shrink-0 basis-full max-w-full section-product-list__masonry section-product-list__masonry--gallery-page gallery-list-container">
+        <div class="flex justify-content-end">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 <?php
                 while ($gallery_query->have_posts()) {
                     $gallery_query->the_post();
@@ -78,12 +78,5 @@ foreach ($level_1_categories as $level_1_category) {
                 ?>
             </div>
         </div>
-        <?php if ($maxPageNumber != $currentPageNumber) : ?>
-            <div class="col-12 text-center section-gallery-list__load-more">
-                <a href="javascript:void(0)" class="mn-btn gallery-load-more" data-maxpage="<?= ($maxPageNumber); ?>">
-                    load more
-                </a>
-            </div>
-        <?php endif; ?>
     </div>
 </section>

@@ -1,0 +1,61 @@
+/*=====================================================
+=            Blog Details Section CSS          =
+=======================================================*/
+.single-post {
+    .blog_post_content {
+        .section {
+            &-blog {
+                &-details {
+                    &__col {
+                        margin-bottom: 60px;
+                    }
+                    &__title {
+                        font-size: $fs-medium;
+                        line-height: 32px;
+                        margin-bottom: 20px;
+                        &--space {
+                            margin-bottom: 40px;
+                        }
+                    }
+                    &__content {
+                        font-size: $fs-normal;
+                        line-height: 28px;
+                    }
+                    &__gallery {
+                        flex-wrap: wrap;
+                        margin: 50px 0;
+                        &-item {
+                            &--left {
+                                flex: 0 0 56.1%;
+                                max-width: 56.1%;
+                            }
+                            &--right {
+                                flex: 0 0 43.9%;
+                                max-width: 43.9%;
+                            }
+                        }
+                    }
+                    &__points {
+                        margin-top: 40px;
+                    }
+                }
+            }
+            &-similar {
+                &__time {
+                    &--post {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+
+        .mn-section {
+            padding: 20px 0;
+
+            &:nth-child(2) {
+                padding-top: 100px;
+            }
+        }
+    }
+}
+/*=====  End of Blog Details Section CSS  ======*/

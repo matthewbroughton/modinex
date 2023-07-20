@@ -1,0 +1,103 @@
+/*=====================================================
+=            General Page Intro Section CSS          =
+=======================================================*/
+.section {
+    &-intro {
+        &-gallery {
+            &--general {
+                padding-bottom: 0;
+            }
+        }
+
+        &__content {
+            &--general {
+                max-width: 860px;
+            }
+        }
+    }
+
+    &-gallery {
+        &__row {
+            &--general {
+                margin-top: 80px !important;
+            }
+        }
+    }
+}
+/*=====  End of General Page Intro Section CSS  ======*/
+/*=====================================================
+=            General Page Gallery Section CSS          =
+=======================================================*/
+.section {
+    &-general {
+        &-list {
+            list-style: none;
+            margin: 30px 0 0;
+            padding: 0;
+
+            &-wrap {
+                margin-top: 80px;
+            }
+
+            &__item {
+                color: $oxford-blue;
+                display: flex;
+                flex-wrap: wrap;
+                font-size: $fs-normal;
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__title {
+                min-width: 160px;
+                opacity: 0.6;
+            }
+
+            &__content {
+                flex: 0 0 100%;
+                line-height: 29px;
+                max-width: calc(100% - 180px);
+            }
+        }
+    }
+}
+/*=====  End of General Page Gallery Section CSS  ======*/
+.section {
+    &-bullet {
+        padding-top: 0;
+
+        &__list {
+            color: $oxford-blue;
+            font-size: $fs-normal;
+            list-style-type: none;
+            padding: 0;
+
+            &-wrap {
+                margin-top: 30px;
+            }
+
+            &-item {
+                line-height: 30px;
+                margin-bottom: 15px;
+                padding-left: 20px;
+                position: relative;
+                
+                &:after {
+                    background-color: $bermuda-gray;
+                    border-radius: 50%;
+                    content: '';
+                    height: 8px;
+                    left: 0;
+                    opacity: 0.5;
+                    position: absolute;
+                    top: 11px;
+                    width: 8px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+//Configuration and helpers
+@import
+  'variables',
+  'mixins',
+  'bootstrap';
+
+//Magnific Popup module
+@import
+  './node_modules/magnific-popup/src/css/_settings.scss',
+  './node_modules/magnific-popup/src/css/main.scss';
+
+//Slick Carousel
+$slick-loader-path: '../img/';
+
+@import
+  './node_modules/slick-carousel/slick/slick.scss',
+  './node_modules/slick-carousel/slick/slick-theme.scss';
+
+//Base stuff
+@import
+  'base',
+  'fonts',
+  'global',
+  'typography';
+
+//Home Page
+@import
+  'header',
+  'pages/home',
+  'pages/project',
+  'pages/product-details',
+  'pages/product',
+  'pages/product-details',
+  'pages/product-category',
+  'pages/contact-us',
+  'pages/blog-details',
+  'pages/general-page',
+  'pages/blog-list',
+  'pages/resellers',
+  'pages/gallery',
+  'footer',
+  'responsive';

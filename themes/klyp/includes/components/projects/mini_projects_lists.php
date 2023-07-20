@@ -1,0 +1,170 @@
+<?php
+$fields = array(
+    'component_mini_projects_lists' => array(
+        'key' => 'component_mini_projects_lists',
+        'name' => 'project_mini_projects_lists',
+        'label' => 'Mini Projects Lists (Project)',
+        'display' => 'block',
+        'sub_fields' => array(
+            //Component Settings Tab
+            array(
+                'key' => 'component_mini_projects_lists_tab_setting',
+                'label' => 'Settings',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'component_mini_projects_lists_component_enabled',
+                'label' => 'Show This Component?',
+                'name' => 'enable_component',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Enabled',
+                'ui_off_text' => 'Hidden',
+            ),
+            array(
+                'key' => 'component_mini_projects_lists_field_id',
+                'label' => 'ID',
+                'name' => 'id',
+                'type' => 'text',
+                'instructions' => 'identifier',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+            array(
+                'key' => 'component_mini_projects_lists_field_class',
+                'label' => 'Classes',
+                'name' => 'class',
+                'type' => 'text',
+                'instructions' => 'additional classes',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+            // Component Content Tab
+            array(
+                'key' => 'component_mini_projects_lists_tab_content',
+                'label' => 'Content',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'component_mini_projects_lists_component_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '30',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'component_mini_projects_lists_layout_switch',
+                'label' => 'Custom Projects List Layout Switch',
+                'name' => 'component_mini_projects_lists_layout_switch',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => '',
+                'wrapper' => array(
+                    'width' => '100',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => '1',
+                'ui' => 1,
+                'ui_on_text' => 'Default',
+                'ui_off_text' => 'Custom Project Lists',
+            ),
+            array(
+                'key' => 'component_mini_projects_lists_projects_lits',
+                'label' => 'Projects List',
+                'name' => 'component_mini_projects_lists',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'component_mini_projects_lists_layout_switch',
+                            'operator' => '!=',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'component_mini_projects_lists_projects',
+                        'label' => 'Projects',
+                        'name' => 'project',
+                        'type' => 'post_object',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'post_type' => array(
+                            0 => 'project',
+                        ),
+                        'taxonomy' => '',
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'return_format' => 'object',
+                        'ui' => 1,
+                    )
+                ),
+            ),
+        ),
+    )
+);

@@ -1,0 +1,1093 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+/*=========================================
+=            Hero Section CSS            =
+=========================================*/
+.section {
+    &-hero {
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+
+        &__row {
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            min-height: 100vh;
+
+            &:after {
+                background-color: rgba($black, 0.2);
+                bottom: 0;
+                content: '';
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &__col {
+            background-attachment: fixed;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: $white;
+            display: flex;
+            flex: 1;
+            position: relative;
+            transition: 0.5s linear all;
+            z-index: 2;
+            overflow: hidden;
+
+            &-content {
+                min-width: 303px;
+                width: 100%;
+
+                h3 {
+                    color: $white;
+                }
+            }
+
+            &-border {
+                align-items: center;
+                display: flex;
+                text-align: center;
+                width: 100%;
+            }
+
+            &:after {
+                border-right: 1px solid $white;
+                bottom: 0;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 100px;
+            }
+
+            &:last-child {
+                &:after {
+                    border: none;
+                }
+            }
+
+            &.active {
+                flex: 100%;
+
+                .section {
+                    &-hero {
+                        &__col {
+                            &-border {
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+
+                img {
+                    opacity: 1;
+                    z-index: -1;
+                }
+            }
+        }
+
+        &__con {
+            &-row {
+                bottom: 0;
+                color: $white;
+                display: flex;
+                flex-wrap: wrap;
+                left: 0;
+                right: 0;
+                top: 0;
+                z-index: 55;
+
+                &:after {
+                    background-color: rgba($prussian-blue, 0.52);
+                    bottom: 0;
+                    content: '';
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            &-col {
+                align-items: center;
+                display: flex;
+                flex: 0 0 20%;
+                max-width: 20%;
+                overflow: hidden;
+                position: relative;
+                text-align: center;
+                z-index: 4;
+
+                &-content {
+                    position: relative;
+                    width: 100%;
+                    z-index: 20;
+                }
+
+                &.hover-on {
+                    &:after {
+                        top: -12%;
+                    }
+
+                    &:before {
+                        bottom: -11.9%;
+                    }
+
+                    .section {
+                        &-hero {
+                            &__con {
+                                &-title {
+                                    opacity: 0;
+                                    transform: translateY(0);
+                                }
+
+                                &-logo {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+
+                                &-sub {
+                                    &-title {
+                                        transform: translateY(-20px);
+                                    }
+                                }
+
+                                &-txt {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.hover-off {
+                    * {
+                        opacity: 0;
+                    }
+                }
+
+                &:after,
+                &:before {
+                    background-color: rgba($black, 0.5);
+                    content: '';
+                    height: 60%;
+                    left: -50%;
+                    position: absolute;
+                    right: -50%;
+                    transition: 0.3s linear all;
+                    width: 200%;
+                }
+
+                &:after {
+                    top: -100%;
+                    transform: rotate(-20deg);
+                }
+
+                &:before {
+                    bottom: -100%;
+                    transform: rotate(-20deg);
+                }
+            }
+
+            &-title {
+                color: $white;
+                font-size: $fs-normal;
+                font-weight: $fw-bold;
+                line-height: 26px;
+                margin: 0;
+                transform: translateY(60px);
+                transition: 0.3s linear all;
+            }
+
+            &-txt {
+                font-size: 13px;
+                line-height: 16px;
+                min-height: 260px;
+                opacity: 0;
+                padding: 0 35px;
+                transform: translateY(30px);
+                transition: 0.3s linear all;
+            }
+
+            &-logo {
+                height: 80px;
+                opacity: 0;
+                transform: translateY(-50px);
+                transition: 0.3s linear all;
+
+                img {
+                    height: 70px;
+                    max-width: 220px;
+                    -o-object-fit: contain;
+                    object-fit: contain;
+                    padding: 0 20px;
+                }
+            }
+
+            &-cta {
+                margin-top: 70px;
+
+                a {
+                    color: $white;
+                    display: block;
+                    font-weight: $fw-bold;
+                    margin: 0 auto;
+                    max-width: 194px;
+                    padding: 9px 25px;
+                    position: relative;
+                    z-index: 5;
+
+                    &:after {
+                        background: $cerulean;
+                        bottom: 0;
+                        content: '';
+                        left: 0;
+                        opacity: 1;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        transform: skewX(-30deg);
+                        z-index: -1;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            &-sub {
+                &-title {
+                    transform: translateY(140px);
+                    transition: 0.3s linear all;
+                }
+            }
+        }
+
+        &__scroll {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 55;
+
+            &-arrow {
+                transform: translateY(22px);
+            }
+        }
+    }
+}
+
+.section-hero__x-pattern {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    img {
+        max-width: 100%;
+    }
+}
+/*=====  End of Hero Section CSS  ======*/
+
+/*=========================================
+=            Intro Section CSS            =
+=========================================*/
+.section {
+    &-intro {
+        &__content {
+            margin: 0 auto;
+            max-width: 685px;
+
+            &--project {
+                max-width: 900px;
+            }
+        }
+    }
+}
+/*=====  End of Intro Section CSS  ======*/
+
+/*=========================================
+=            Broken Grid Section CSS            =
+=========================================*/
+.section {
+    &-broken {
+        padding: 0;
+
+        &__img {
+            margin-left: -15px;
+            overflow: hidden;
+
+            img {
+                min-height: 547px;
+                object-fit: cover;
+                transition: 0.3s linear all;
+                width: 100%;
+            }
+
+            &:after {
+                background: rgba($prussian-blue, 0.9);
+                bottom: 0;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 85px;
+            }
+        }
+
+        &__content {
+            background: $white;
+            bottom: 0;
+            left: -100px;
+            max-width: 500px;
+            min-height: 55%;
+            padding: 62px 30px 0 95px;
+            position: absolute;
+            top: auto;
+
+            .mn-title {
+                margin-bottom: 13px;
+            }
+
+            &:after {
+                background-image: url(../img/line-pattern.svg);
+                content: '';
+                height: 34px;
+                left: 27px;
+                position: absolute;
+                top: -24px;
+                width: 216px;
+                z-index: -1;
+            }
+        }
+
+        &__txt {
+            max-width: 100%;
+
+            &--summary {
+                max-width: 100%;
+            }
+
+            &-list {
+                margin-top: 30px !important;
+
+                &-item {
+                    align-items: flex-start;
+                    color: $prussian-blue;
+                    display: flex;
+                    flex-wrap: wrap;
+                    font-size: $fs-normal;
+                    font-weight: $fw-semi-bold;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                }
+
+                &-head {
+                    color: $bermuda-gray;
+                    font-weight: $fw-light;
+                    width: 170px;
+                }
+
+                &-txt {
+                    flex: 0 0 100%;
+                    max-width: calc(100% - 180px);
+                }
+            }
+
+            p {
+                line-height: 23px;
+                margin-bottom: 30px;
+            }
+        }
+
+        &--reverse {
+            padding: 80px 0;
+
+            .row {
+                flex-direction: row-reverse;
+            }
+
+            .section {
+                &-broken {
+                    &__content {
+                        left: auto;
+                        padding: 62px 95px 60px 30px;
+                        right: -100px;
+
+                        &:after {
+                            left: auto;
+                            right: 27px;
+                        }
+                    }
+
+                    &__img {
+                        margin-left: 0;
+                        margin-right: -15px;
+
+                        &:after {
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+
+                    &__col {
+                        &--l {
+                            &:after {
+                                background-position: right;
+                                left: 100px;
+                                right: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__col {
+            &--l {
+                flex: 0 0 55%;
+                max-width: 55%;
+
+                &:after {
+                    background-image: url(../img/line-pattern.svg);
+                    bottom: -21px;
+                    content: '';
+                    height: 34px;
+                    position: absolute;
+                    right: 100px;
+                    width: 116px;
+                    z-index: -1;
+                }
+            }
+
+            &--s {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+        }
+
+        &:hover {
+            .section {
+                &-broken {
+                    &__img {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*=====  End of Broken Grid Section CSS  ======*/
+
+/*=========================================
+=            Selling Point Section CSS            =
+=========================================*/
+.section {
+    &-selling {
+        padding-bottom: 10px;
+
+        &__img {
+            padding-right: 35px;
+        }
+
+        &__content {
+            background-color: rgba($prussian-blue, 0.9);
+            margin-left: 32px;
+            padding: 40px 15px 40px 45px;
+            transform: translateY(-94px);
+
+            &:after {
+                background-image: url(../img/line-pattern.svg);
+                content: '';
+                height: 34px;
+                position: absolute;
+                right: 0;
+                top: -21px;
+                width: 116px;
+                z-index: -1;
+            }
+
+            &:before {
+                // background: $white;
+                content: '';
+                height: 20px;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 2;
+            }
+
+            .mn-title {
+                color: $white;
+                margin-bottom: 14px;
+            }
+
+            .section-broken__cta {
+                margin-top: 15px;
+            }
+        }
+
+        &__txt {
+            p {
+                color: $white;
+                line-height: 23px;
+                margin: 0;
+            }
+
+            a {
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/*=====  End of Selling Point Section CSS  ======*/
+
+/*=========================================
+=            About Us CSS            =
+=========================================*/
+.section {
+    &-broken {
+        &--video {
+            &__play {
+                a {
+                    animation: ripple 0.9s linear infinite;
+                    background: $white;
+                    border-radius: 50%;
+                    display: block;
+                    height: 120px;
+                    left: 0;
+                    line-height: 120px;
+                    margin: 0 auto;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 120px;
+                    z-index: 5;
+
+                    img {
+                        min-height: auto;
+                        transform: scale(1) !important;
+                        width: auto !important;
+                    }
+                }
+            }
+        }
+    }
+}
+/*=====  End of About Us CSS  ======*/
+
+/*=========================================
+=            Recent Project CSS            =
+=========================================*/
+.section {
+    &-project {
+        padding-bottom: 50px;
+
+        &__title {
+            margin-bottom: 35px;
+        }
+
+        &__text {
+            p {
+                font-size: $fs-normal;
+                line-height: 26px;
+                padding-right: 10px;
+            }
+        }
+
+        &__gallery {
+            &-top {
+                align-items: flex-end;
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                &-l-item {
+                    flex: 0 0 52%;
+                    max-width: 52%;
+                }
+
+                &-s-item {
+                    flex: 0 0 45%;
+                    margin-right: 3%;
+                    max-width: 45%;
+
+                    &:before {
+                        background-image: url(../img/line-pattern.svg);
+                        content: '';
+                        height: 34px;
+                        left: -60px;
+                        position: absolute;
+                        top: -12px;
+                        width: 116px;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            &-bottom {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 19px 0 0;
+                padding: 0 0 0 70px;
+
+                &-l-item {
+                    flex: 0 0 52%;
+                    margin-right: 3%;
+                    max-width: 52%;
+                }
+
+                &-s-item {
+                    flex: 0 0 45%;
+                    max-width: 45%;
+
+                    img {
+                        display: block;
+
+                        &:first-child {
+                            margin-bottom: 19px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__btn-grp {
+            margin-top: 40px;
+
+            .mn-btn {
+                &:first-child {
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+}
+/*=====  End of Recent Project CSS  ======*/
+
+/*=========================================
+=            Two Box Section CSS            =
+=========================================*/
+.section {
+    &-two {
+        &-clad {
+            padding-bottom: 0;
+
+            &__con {
+                background-color: rgba($prussian-blue, 0.9);
+                margin-left: 33px;
+                max-width: 366px;
+                padding: 45px;
+                transform: translateY(-109px);
+
+                .mn-title {
+                    color: $white;
+                    margin-bottom: 18px;
+                }
+            }
+
+            &__txt {
+                p {
+                    color: $white;
+                    line-height: 23px;
+                }
+            }
+
+            &__link {
+                margin-top: 28px;
+            }
+
+            &__img {
+                &:after {
+                    content: '';
+                    background-image: url(../img/line-pattern.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    bottom: -28px;
+                    height: 30px;
+                    position: absolute;
+                    right: 39px;
+                    width: 191px;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+/*=====  End of Two Box Section CSS CSS  ======*/
+
+/*=========================================
+=            Testimonial and Client Slider CSS            =
+=========================================*/
+.section {
+    &-testimonial {
+        background-position: center;
+        background-size: cover;
+
+        &__title {
+            color: $white;
+            font-size: $fs-large;
+            font-weight: $fw-bold;
+            margin-bottom: 22px;
+        }
+
+        &__container {
+            z-index: 5;
+        }
+
+        &__slider {
+            margin: 0 auto;
+            max-width: 636px;
+
+            &-item {
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+
+                p {
+                    color: rgba($white, 0.6);
+                    font-size: 18px;
+                    line-height: 33px;
+                    margin: 0;
+                }
+            }
+
+            .slick {
+                &-dots {
+                    margin-top: 70px;
+                    position: static;
+
+                    li {
+                        height: 10px;
+                        width: 10px;
+
+                        &.slick-active {
+                            button {
+                                &:before {
+                                    background-color: $cerulean;
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+
+                        button {
+                            height: 10px;
+                            width: 10px;
+
+                            &:before {
+                                background-color: $white;
+                                border-radius: 50%;
+                                height: 10px;
+                                width: 10px;
+                                content: '';
+                                opacity: 0.3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__client {
+            background: $white;
+            bottom: -40px;
+            left: 10px;
+            margin: 0 auto;
+            max-width: 1140px;
+            padding: 15px 20px;
+            position: absolute;
+            right: 10px;
+            z-index: 10;
+
+            &-slider {
+                &-item {
+                    &:focus {
+                        box-shadow: none;
+                        outline: none;
+                    }
+
+                    img {
+                        filter: grayscale(1);
+                        max-width: 100px;
+                        width: auto !important;
+                    }
+                }
+            }
+        }
+
+        &:after {
+            background-color: rgba($mirage, 0.8);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+/*=====  End of Testimonial and Client Slider CSS CSS  ======*/
+
+/* News Section CSS */
+.section {
+    &-news {
+        padding-top: 130px;
+
+        &__heading {
+            margin: 0 auto;
+            max-width: 685px;
+        }
+
+        &__gallery {
+            position: relative;
+
+            &:after {
+                background-color: $mirage;
+                bottom: 0;
+                content: '';
+                left: 0;
+                opacity: 0.4;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 2;
+            }
+
+            &-wrap {
+                margin-top: 55px;
+            }
+
+            &:first-child {
+                margin-bottom: 26px;
+            }
+
+            &--video {
+                margin-bottom: 0 !important;
+                margin-top: 30px;
+                max-width: 100%;
+
+                .mn-video-pop-btn {
+                    animation: ripple 0.9s linear infinite;
+                    background: $white;
+                    border-radius: 50%;
+                    display: inline-block;
+                    height: 70px;
+                    left: 0;
+                    line-height: 64px;
+                    margin: 0 auto;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 70px;
+                    z-index: 15;
+                }
+
+                .overflow-hidden {
+                    .mn-scale-img {
+                        min-height: 570px;
+                        object-fit: cover;
+                    }
+                }
+
+                &:hover {
+                    .overflow {
+                        &-hidden {
+                            .mn-scale-img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--space {
+                margin-top: 110px;
+            }
+
+            &--pattern {
+                left: 30px;
+                top: -24px;
+            }
+
+            .position {
+                &-relative {
+                    &:hover {
+                        .mn-scale-img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__txt {
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            right: 0;
+            z-index: 5;
+
+            &--video {
+                padding: 40px;
+            }
+        }
+
+        &__title {
+            color: $white;
+            font-size: $fs-normal;
+            font-weight: $fw-bold;
+            line-height: 26px;
+
+            &--video {
+                font-size: $fs-medium;
+                line-height: 34px;
+            }
+        }
+    }
+}
+/* End of News Section CSS */
+
+/* Contact Us Section CSS */
+.section {
+    &-contact {
+        background-color: $prussian-blue;
+
+        &__logo {
+            margin-bottom: 26px;
+
+            img {
+                max-width: 303px;
+            }
+
+            &-tagline {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+
+        &__nav {
+            margin-top: 160px;
+            max-width: 490px;
+
+            &-title {
+                color: $white;
+                font-size: $fs-small;
+                line-height: 22px;
+                margin-bottom: 14px;
+            }
+        }
+
+        &__link {
+            color: $white;
+            font-size: $fs-xsmall;
+            opacity: 60%;
+            text-decoration: none;
+
+            &:hover {
+                color: $white;
+                opacity: 1;
+                text-decoration: none;
+            }
+        }
+
+        &__form {
+            &-wrap {
+                .mn-title--big {
+                    color: $white;
+                    margin-bottom: 40px;
+                }
+            }
+
+            .form {
+                &-row {
+                    margin-left: -10px;
+                    margin-right: -10px;
+
+                    [class*="col-"],
+                    .col {
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+                }
+
+                &-group {
+                    margin-bottom: 16px;
+
+                    label {
+                        color: $white;
+                        font-size: $fs-xsmall;
+                        line-height: 26px;
+                    }
+
+                    textarea {
+                        resize: none;
+                    }
+                }
+
+                &-control {
+                    background-color: rgba($white, 0.08);
+                    border-color: rgba($white, 0.08);
+                    border-radius: 0;
+                    color: $white;
+                    font-size: $fs-xsmall;
+                    min-height: 34px;
+                    padding: 10px 11px;
+
+                    &:focus {
+                        border-color: $mirage;
+                        box-shadow: none;
+                    }
+
+                    &::placeholder {
+                        color: $white;
+                    }
+                }
+            }
+
+            .mn-btn {
+                margin-top: 13px;
+            }
+        }
+    }
+}
+/* End of Contact Us Section CSS */
+
+/* Play Button Ripple Effect */
+@-webkit-keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba($white, 0.3), 0 0 0 10px rgba($white, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba($white, 0.3), 0 0 0 25px rgba($white, 0.3);
+    }
+}
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba($white, 0.3), 0 0 0 10px rgba($white, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba($white, 0.3), 0 0 0 25px rgba($white, 0.3);
+    }
+}
+/* End of Play Button Ripple Effect */

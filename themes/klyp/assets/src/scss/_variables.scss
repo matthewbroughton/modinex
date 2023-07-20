@@ -1,0 +1,70 @@
+// Fonts Declaration
+// $text-font-stack: 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+// $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+$body-font      : 'Barlow', sans-serif;
+$barlow_font    : 'Barlow', sans-serif;
+$open_sans_font : 'Open Sans', sans-serif;
+
+//Font sizes
+$fs-large       : 44px;
+$fs-mlarge      : 34px;
+$fs-medium      : 28px;
+$fs-normal      : 22px;
+$fs-normal2     : 23px;
+$fs-small       : 16px;
+$fs-xsmall      : 14px;
+$fs-xxsmall     : 12px;
+
+//Font weights
+$fw-light       : 100;
+$fw-normal      : 400;
+$fw-regular     : 500;
+$fw-semi-bold   : 600;
+$fw-bold        : 700;
+
+
+// Colors Declaration
+$mine-shaft     : rgb(34, 34, 34) !default;
+$supernova      : #ffcb05 !default;
+$white          : #ffffff !default;
+$black          : #000000 !default;
+$dark-grey      : #35404a !default;
+$light-grey     : #ebebeb !default;
+$blue           : #337ab7 !default;
+$athens-gray    : #F9F9FA;
+$cerulean       : #00BDF2;
+$mirage         : #162131;
+$oslo-gray      : #828994;
+$bermuda-gray   : #7391A9;
+$oxford-blue    : #2F3B4C;
+$scooter        : #43BEDD;
+$prussian-blue  : #002B40;
+$gray           : #808080;
+$atlantis       : #A6CE39;
+$bittersweet    : #FF5E66;
+$mirage         : #162131;
+
+//Width
+$max-width: 1180px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+$base-url: '/assets/' !default;
+
+// section heading title font size
+$section-title : 30px;
+
+// section heading strip font size
+$section-title-strip--size : 20px;
+
+// hero heading font size
+$hero-title : 42px;

@@ -1,0 +1,382 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $mirage;
+    font-weight: $fw-bold;
+}
+
+a {
+    &:focus,
+    &:active {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+/*=========================================
+=            Global CSS          =
+=========================================*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $oslo-gray;
+    font-family: $barlow_font;
+    font-size: $fs-small;
+    scroll-behavior: smooth;
+}
+
+.scroll_lock {
+    overflow: scroll;
+    height: 100%;
+}
+
+.mn {
+    &-section {
+        padding: 100px 0;
+    }
+
+    &-title {
+        font-size: $fs-medium;
+        font-weight: $fw-bold;
+        line-height: 34px;
+
+        &--big {
+            font-size: $fs-large;
+            font-weight: $fw-bold;
+            line-height: 53px;
+        }
+    }
+    
+    &-short {
+        &__text {
+            font-size: $fs-normal;
+            line-height: 23px;
+            margin-top: 20px;
+        }
+    }
+
+    &-sub {
+        &-title {
+            font-size: $fs-medium;
+            line-height: 34px;
+            margin: 0;
+        }
+    }
+}
+
+body {
+    .mn {
+        @media (min-width: 1200px) {
+            &-container--shrink {
+                max-width: 920px;
+            }
+        }
+    }
+}
+/* End of Global CSS */
+
+/*=========================================
+=            Global Custom Checkbox CSS          =
+=========================================*/
+
+.mn {
+    &-custom {
+        &-checkbox {
+            color: $oxford-blue;
+            cursor: pointer;
+            font-size: $fs-xsmall;
+            font-weight: $fw-regular;
+            opacity: 0.6;
+            padding-right: 30px;
+            position: relative;
+
+            input[type="checkbox"] {
+                height: 0;
+                margin: 0;
+                opacity: 0;
+                position: absolute;
+                width: 0;
+
+                &:checked {
+                    ~.mn-checkmark {
+                        background-color: $cerulean;
+                        border-color: $cerulean;
+                        opacity: 1;
+
+                        &:after {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                font-weight: $fw-bold;
+                opacity: 1;
+            }
+        }
+    }
+
+    &-checkmark {
+        border: 1px solid $oxford-blue;
+        height: 14px;
+        opacity: 0.4;
+        position: absolute;
+        right: 0;
+        top: 6px;
+        width: 14px;
+
+        &:after {
+            border-width: 0 2px 2px 0;
+            border: solid $white;
+            content: '';
+            display: none;
+            height: 9px;
+            left: 3px;
+            position: absolute;
+            top: 1px;
+            transform: rotate(45deg);
+            width: 5px;
+        }
+    }
+}
+/* End of Global Custom Checkbox */
+
+/*=========================================
+=            Global Button CSS          =
+=========================================*/
+.mn {
+    &-btn {
+        border: 1px solid $cerulean !important;
+        color: $cerulean;
+        display: inline-block;
+        font-size: $fs-xsmall;
+        font-weight: $fw-regular;
+        line-height: 16px;
+        min-width: 170px;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.3s linear all;
+
+        &:hover {
+            background-color: $cerulean;
+            color: $white;
+            text-decoration: none;
+        }
+
+        &--fill {
+            background-color: $cerulean;
+            color: $white;
+
+            &:hover {
+                background-color: $cerulean;
+                color: $white;
+            }
+        }
+    }
+    &-scale {
+        &-img {
+            transition: 0.3s linear all;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.mn-hover-scale-img-arrow {
+    img {
+        transition: all 1s linear;
+        transform-origin: left;
+    }
+
+    &:hover {
+        img {
+            transform: scaleX(1.5);
+        }
+    }
+}
+/*=====  End of Global Button CSS  ======*/
+
+/*=========================================
+=            Global Broken Banner CSS          =
+=========================================*/
+.section {
+    &-br {
+        &-banner {
+            padding-top: 100px;
+
+            &__content {
+                background-color: $white;
+                bottom: -20px;
+                padding: 70px 100px;
+                right: 0;
+                width: 50%;
+            }
+
+            .mn-title--big {
+                margin-bottom: 27px;
+            }
+
+            .mn-short__text {
+                line-height: 30px;
+            }
+
+            &__img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+/*=====  End of Global Broken Banner CSS  ======*/
+
+/*=========================================
+=            Gloabl Icon Text CSS          =
+=========================================*/
+.mn {
+    &-icon {
+        &-txt {
+            font-size: $fs-normal;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            &__item {
+                align-items: center;
+                color: $oxford-blue;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                img {
+                    max-width: 21px;
+                }
+
+                p {
+                    flex: 0 0 100%;
+                    margin: 0;
+                    max-width: calc(100% - 55px);
+
+                    a {
+                        color: $oxford-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/*=====  End of Gloabl Icon Text CSS  ======*/
+
+.mn-section-full-width {
+    table {
+        th,
+        td {
+            border: 2px solid $oslo-gray;
+            padding: .75rem
+        }
+    }
+}
+
+/* Checkbox Design */
+.md-inline-check {
+    .wpcf7-list-item {
+        margin: 0;
+    }
+
+    input[type=checkbox] {
+        left: 0;
+        position: absolute;
+        top: 4px;
+    }
+
+    .wpcf7-list-item {
+        label {
+            position: relative;
+        }
+    }
+
+    .wpcf7-list-item-label {
+        display: block;
+        padding-left: 22px;
+    }
+}
+
+/* Announcement Bar CSS */
+.mn-announcement {
+    background-color: rgba($prussian-blue, 0.9);
+    bottom: 0;
+    left: 0;
+    padding: 30px 0;
+    position: fixed;
+    right: 0;
+    z-index: 56;
+
+    .row {
+        align-items: center;
+    }
+
+    .mn-announcement__title {
+        font-size: $fs-normal;
+        color: $white;
+    }
+
+    .mn-announcement__list {
+        img {
+            display: inline-block;
+            margin-right: 35px;
+            max-width: 100%;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .mn-announcement__close {
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}

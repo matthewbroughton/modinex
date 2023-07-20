@@ -1,0 +1,14 @@
+{
+  "identifier" : "E9C73C24-F4D4-4529-B28A-9DC2590C573C",
+  "ignoredFilePatterns" : [
+    "themes\/klyp\/assets\/src\/css\/input.css",
+    "themes\/klyp\/node_modules",
+    "themes\/klyp\/package-lock.json",
+    "themes\/klyp\/package.json",
+    "themes\/klyp\/tailwind.config.js"
+  ],
+  "localPath" : "themes\/klyp",
+  "remotePath" : "\/domains\/staging.modinex.com.au\/public_html\/wp-content\/themes\/klyp",
+  "server" : "Modinex",
+  "usesPublishing" : true
+}

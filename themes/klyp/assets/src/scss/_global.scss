@@ -1,0 +1,43 @@
+/*=========================================
+=            Gloabl Icon Text CSS          =
+=========================================*/
+.mn {
+    &-icon {
+        &-txt {
+            font-size: $fs-normal;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            &__item {
+                align-items: center;
+                color: $oxford-blue;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                img {
+                    max-width: 21px;
+                }
+                p {
+                    flex: 0 0 100%;
+                    margin: 0;
+                    max-width: calc(100% - 55px);
+                    a {
+                        color: $oxford-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/*=====  End of Gloabl Icon Text CSS  ======*/
+
+.btn {
+    &--hide {
+        display: none;
+    }
+}

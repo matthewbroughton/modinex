@@ -1,0 +1,140 @@
+/*=====================================================
+=            Galler Filter and Title Section CSS          =
+=======================================================*/
+.section {
+    &-product {
+        &-list {
+            &__heading {
+                &--gallery {
+                    margin: 40px 0 50px;
+                }
+            }
+        }
+    }
+
+    &-gallery {
+        &-page {
+            &__gray {
+                &-bg {
+                    background-color: rgba($mirage, 0.05);
+                    margin-bottom: 80px;
+                }
+            }
+
+            &__form {
+                display: flex;
+                flex-wrap: wrap;
+
+                &-check {
+                    flex: 0 0 15%;
+                    padding: 0;
+                    margin-right: 1.7%;
+                    max-width: 15%;
+
+                    &--hide {
+                        display: none;
+                        margin: 0 1.7% 0 0 !important;
+                        padding-top: 10px;
+                        width: 100% !important;
+                    }
+
+                    .mn {
+                        &-custom {
+                            &-checkbox {
+                                padding-left: 30px;
+                                padding-right: 0;
+                            }
+                        }
+
+                        &-checkmark {
+                            left: 0;
+                            right: auto;
+                            top: 4px;
+                        }
+                    }
+                }
+
+                &-more {
+                    color: $oxford-blue;
+                    font-size: $fs-xsmall;
+                    font-weight: $fw-regular;
+                    line-height: 17px;
+                    right: -73px;
+                    top: 21px;
+                    transition: 0.3s linear all;
+
+                    &:hover,
+                    &.open {
+                        color: $cerulean;
+                        text-decoration: none;
+
+                        &:after,
+                        &:before {
+                            background: $cerulean;
+                        }
+                    }
+
+                    &.open {
+                        &:before {
+                            transform: rotate(0);
+                        }
+                    }
+
+                    &:after,
+                    &:before {
+                        background-color: $oxford-blue;
+                        content: '';
+                        height: 2px;
+                        position: absolute;
+                        right: -17px;
+                        top: 9px;
+                        transition: 0.3s linear all;
+                        width: 10px;
+                    }
+
+                    &:before {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            &__tab {
+                .nav {
+                    &-item {
+                        margin: 0;
+                    }
+
+                    &-link {
+                        border: none !important;
+                        border-bottom: 2px solid transparent !important;
+                        color: $bermuda-gray;
+                        font-size: $fs-small;
+                        font-weight: 500;
+                        line-height: 19px;
+                        margin-right: 45px !important;
+                        padding: 5px 8px 15px 0;
+
+                        &.active {
+                            background-color: transparent;
+                            border-color: $cerulean !important;
+                            color: $mirage;
+                            font-weight: $fw-bold;
+                        }
+                    }
+                }
+                
+                .tab {
+                    &-pane {
+                        padding: 20px 0;
+                    }
+                }
+
+                .gallery__tab-clearall {
+                    position: absolute;
+                    right: 20px;
+                }
+            }
+        }
+    }
+}
+/*=====  End of Gallery Filter and Title Section CSS  ======*/

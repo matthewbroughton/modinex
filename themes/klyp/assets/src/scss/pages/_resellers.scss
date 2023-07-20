@@ -1,0 +1,251 @@
+/*=========================================
+=            Google Map and Sidebar CSS   =
+=========================================*/
+.section {
+    &-reseller {
+        &-map {
+            &__sidebar {
+                &-toggle {
+                    color: $mirage;
+                    font-size: $fs-xsmall;
+                    font-weight: $fw-bold;
+                    padding: 20px 30px;
+                    position: relative;
+
+                    &:hover {
+                        color: $mirage;
+                        text-decoration: none;
+                    }
+
+                    &:after,
+                    &:before {
+                        background-color: $oxford-blue;
+                        content: '';
+                        height: 2px;
+                        position: absolute;
+                        right: 30px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: 0.3s linear all;
+                        width: 12px;
+                    }
+
+                    &:before {
+                        transform: translateY(-50%) rotate(0);
+                    }
+
+                    &.collapsed {
+                        &:before {
+                            transform: translateY(-50%) rotate(90deg);
+                        }
+                    }
+                }
+
+                &-acc {
+                    background-color: rgba($mirage, 0.05);
+                    border-bottom: 1px solid rgba($gray, 0.2);
+
+                    &-counter {
+                        background-color: $cerulean;
+                        color: $white;
+                        font-size: $fs-xxsmall;
+                        font-weight: $fw-semi-bold;
+                        height: 18px;
+                        left: -1px;
+                        position: absolute;
+                        text-align: center;
+                        top: -1px;
+                        width: 18px;
+                    }
+
+                    &-content {
+                        padding: 0 30px 20px;
+                    }
+
+                    &-box {
+                        background-color: $white;
+                        border: 1px solid transparent;
+                        margin-bottom: 10px;
+                        padding: 15px 15px 15px 30px;
+                        position: relative;
+
+                        &--slide {
+                            margin: 0 5px 0;
+                            min-height: 120px;
+                            outline: none !important;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &--active {
+                            border-color: $cerulean;
+                        }
+                    }
+
+                    &-category {
+                        color: $atlantis;
+                        font-size: $fs-xxsmall;
+                        font-weight: $fw-regular;
+                        margin-bottom: 4px;
+                    }
+
+                    &-title {
+                        color: $mirage;
+                        font-size: $fs-xsmall;
+                        margin-bottom: 2px;
+                    }
+
+                    &-phone {
+                        align-items: center;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        img {
+                            height: 12px;
+                            width: 12px;
+                        }
+
+                        a {
+                            color: rgba($oxford-blue, 0.6);
+                            flex: 0 0 100%;
+                            font-size: $fs-xxsmall;
+                            max-width: calc(100% - 20px);
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .store_distance_text {
+                        font-size: 12px;
+                        margin-bottom: 0;
+                        margin-top: 5px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            &__map {
+                min-height: 805px;
+            }
+
+            &__tooltip {
+                font-family: $barlow_font;
+                min-height: 40px;
+                width: 200px;
+
+                &-cat {
+                    color: $atlantis;
+                    font-size: $fs-xxsmall;
+                }
+
+                &-title {
+                    font-size: $fs-small;
+                    font-weight: $fw-regular;
+                    margin-bottom: 5px;
+                }
+
+                &-list {
+                    align-items: flex-start;
+                    color: $oxford-blue;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-bottom: 6px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    img {
+                        bottom: 3px;
+                        margin-top: 4px;
+                        max-width: 15px;
+                        position: relative;
+                        width: auto;
+                    }
+                }
+
+                &-txt {
+                    font-size: $fs-xxsmall;
+                    flex: 0 0 100%;
+                    max-width: calc(100% - 20px);
+
+                    a {
+                        color: $oxford-blue;
+
+                        &:hover {
+                            color: $oxford-blue;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section {
+    &-reseller {
+        &-map {
+            &__dropdown,
+            &__input {
+                background: $white;
+                border: 1px solid rgba($bermuda-gray, 0.47);
+                font-size: 14px;
+                margin: 0;
+                padding: 18px 15px 18px 30px;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+                width: 56%;
+                z-index: 5;
+
+                &--mob {
+                    margin-bottom: 15px;
+                    width: 100% !important;
+                }
+            }
+
+            &__dropdown {
+                left: 30px;
+                right: auto;
+                width: 35%;
+            }
+        }
+    }
+}
+/*=====  End of Google Map and Sidebar CSS  ======*/
+
+/*=========================================
+=            Google Map Tooltip CSS          =
+=========================================*/
+.gm {
+    &-style {
+        &-iw {
+            &-t {
+                &:after {
+                    background: $cerulean !important;
+                    box-shadow: none !important;
+                    height: 20px !important;
+                    transform: translate(-50%, -50%) rotate(0deg) !important;
+                    width: 1px !important;
+                    z-index: 1 !important;
+                }
+            }
+
+            &-c {
+                background: $white !important;
+                border: 2px solid $cerulean !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                z-index: 2 !important;
+            }
+        }
+    }
+}
+/*=====  End of Google Map Tooltip CSS  ======*/

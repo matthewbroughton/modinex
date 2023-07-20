@@ -1,0 +1,122 @@
+<?php
+$fields = array(
+    'pd_component_hero' => array(
+        'key' => 'pd_component_hero',
+        'name' => 'product_hero',
+        'label' => 'Hero Image',
+        'display' => 'block',
+        'sub_fields' => array(
+            //Component Settings Tab
+            array(
+                'key' => 'pd_component_hero_tab_setting',
+                'label' => 'Settings',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'pd_component_hero_pd_component_enabled',
+                'label' => 'Show This Component?',
+                'name' => 'enable_component',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Enabled',
+                'ui_off_text' => 'Hidden',
+            ),
+            array(
+                'key' => 'pd_component_hero_field_id',
+                'label' => 'ID',
+                'name' => 'id',
+                'type' => 'text',
+                'instructions' => 'identifier',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+            array(
+                'key' => 'pd_component_hero_field_class',
+                'label' => 'Classes',
+                'name' => 'class',
+                'type' => 'text',
+                'instructions' => 'additional classes',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+            ),
+            // Component Content Tab
+            array(
+                'key' => 'pd_component_hero_tab_content',
+                'label' => 'Content',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'pd_component_hero_pd_component_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'pd_component_hero_image',
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => 0,
+                'min_height' => 0,
+                'min_size' => '',
+                'max_size' => '',
+                'mime_types' => 'svg, png, jpg, jpeg',
+            ),
+        ),
+    )
+);

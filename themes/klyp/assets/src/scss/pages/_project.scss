@@ -1,0 +1,553 @@
+.section {
+    &-similar {
+        &__title {
+            margin-bottom: 60px;
+        }
+
+        &__heading {
+            font-size: $fs-normal;
+            line-height: 28px;
+            min-height: 56px;
+        }
+    }
+}
+
+/*=========================================
+=            Gallery Section CSS          =
+=========================================*/
+.section {
+    &-gallery {
+        &__row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__col {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            img {
+                height: 300px;
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+
+                @media (max-width: 575px) {
+                    height: 180px;
+                }
+            }
+
+            &.gallery-5-1 {
+                height: 422px;
+
+                @media (max-width: 991px) {
+                    flex: 0 0 100%;
+                    height: auto;
+                    max-width: unset;
+                }
+            }
+
+            &.gallery-5-2 {
+                height: 422px;
+
+                @media (max-width: 991px) {
+                    flex: 0 0 100%;
+                    height: auto;
+                    max-width: unset;
+                }
+            }
+
+            &.gallery-5-3 {
+                height: 337px;
+
+                @media (max-width: 991px) {
+                    flex: 0 0 100%;
+                    height: auto;
+                    max-width: unset;
+                }
+            }
+
+            &.gallery-5-4 {
+                height: 590px;
+
+                @media (max-width: 991px) {
+                    flex: 0 0 100%;
+                    height: auto;
+                    max-width: unset;
+                }
+            }
+
+            &.gallery-5-5 {
+                height: 590px;
+
+                @media (max-width: 991px) {
+                    flex: 0 0 100%;
+                    height: auto;
+                    max-width: unset;
+                }
+            }
+
+            &--0 {
+                flex: 0 0 56.14%;
+                max-width: 56.14%;
+            }
+
+            &--1 {
+                flex: 0 0 43.86%;
+                max-width: 43.86%;
+            }
+
+            &--3 {
+                flex: 0 0 36.1%;
+                max-width: 36.1%;
+            }
+
+            &--4 {
+                flex: 0 0 63.9%;
+                max-width: 63.9%;
+            }
+        }
+
+        &--overlap {
+            &__col {
+                &--overlap {
+                    position: relative;
+                    transform: translate(60px, -90px);
+                    z-index: 5;
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+
+                &.gallery-4-1 {
+                    height: 502px;
+
+                    @media (max-width: 991px) {
+                        height: auto;
+                    }
+                }
+
+                &.gallery-4-2 {
+                    height: 543px;
+
+                    @media (max-width: 991px) {
+                        height: auto;
+                    }
+                }
+
+                &.gallery-4-3 {
+                    height: 543px;
+
+                    @media (max-width: 991px) {
+                        height: auto;
+                        transform: none;
+                    }
+                }
+
+                &.gallery-4-4 {
+                    height: 501px;
+
+                    @media (max-width: 991px) {
+                        height: auto;
+                    }
+                }
+            }
+
+            &-sec {
+                padding-bottom: 0;
+
+                &__scale {
+                    margin-bottom: -1px;
+                    transform: scale(2);
+                    transform-origin: bottom right;
+                }
+
+                &__col {
+                    &--overlap {
+                        transform: translateY(-150px);
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            &--overlap {
+                margin-top: -70px;
+            }
+        }
+    }
+}
+
+/*=====  End of Gallery Section CSS  ======*/
+/*=========================================
+=            Section Description CSS          =
+=========================================*/
+.section {
+    &-des {
+        margin-top: 60px;
+
+        &__sidebar {
+            &-img {
+                background-color: rgba($mirage, 0.05);
+                padding: 40px 20px;
+            }
+
+            &-title {
+                background-color: $mirage;
+                color: $white;
+                font-size: $fs-medium;
+                margin: 20px 0 0;
+                padding: 15px 10px;
+            }
+        }
+
+        &__intro {
+            margin-bottom: 70px;
+        }
+
+        &__option {
+            margin-bottom: 50px;
+
+            &-heading {
+                font-size: $fs-normal;
+                margin-bottom: 30px;
+            }
+
+            &-list {
+                border: 1px solid rgba($oslo-gray, 0.1);
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 0;
+
+                &-item {
+                    align-items: center;
+                    border: 1px solid rgba($oslo-gray, 0.1);
+                    cursor: pointer;
+                    display: flex;
+                    flex: 0 0 33.33%;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    max-width: 33.33%;
+                    min-height: 150px;
+                    padding: 20px 30px;
+                    position: relative;
+                    text-align: center;
+
+                    &.active {
+                        .section-des__option-list-check {
+                            display: block;
+                        }
+                    }
+                }
+
+                &-number {
+                    font-size: $fs-medium;
+                    margin-bottom: -10px;
+                    text-transform: uppercase;
+                }
+
+                &-title {
+                    font-size: $fs-xsmall;
+                    font-weight: $fw-regular;
+                    line-height: 18px;
+                    margin: 20px 0 0;
+                }
+
+                &-check {
+                    background: $scooter;
+                    border-radius: 50%;
+                    display: none;
+                    height: 28px;
+                    left: 8px;
+                    line-height: 27px;
+                    position: absolute;
+                    text-align: center;
+                    top: 8px;
+                    width: 28px;
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of Section Description CSS  ======*/
+/*=========================================
+=            Featured and Benefit Section CSS          =
+=========================================*/
+.section {
+    &-featured {
+        &__title {
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        &__content {
+            margin-top: 100px;
+        }
+
+        &__feature {
+            display: flex;
+            flex-wrap: wrap;
+
+            &-list {
+                flex: 0 0 32%;
+                max-width: 32%;
+                padding-right: 10px;
+
+                &:nth-child(n + 4) {
+                    margin-top: 40px;
+                }
+            }
+
+            &-icon {
+                max-width: 50px;
+            }
+
+            &-title {
+                font-size: $fs-xsmall;
+                font-weight: $fw-regular;
+                margin-top: 22px;
+
+                a {
+                    color: $prussian-blue;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        &__benefit {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &-list {
+                color: $prussian-blue;
+                flex: 0 0 49%;
+                font-size: $fs-small;
+                font-weight: $fw-semi-bold;
+                line-height: 24px;
+                margin-bottom: 10px;
+                max-width: 49%;
+                padding-left: 15px;
+                position: relative;
+
+                &:before {
+                    background-color: $bermuda-gray;
+                    border-radius: 50%;
+                    content: '';
+                    display: block;
+                    height: 6px;
+                    left: 0;
+                    position: absolute;
+                    top: 11px;
+                    width: 6px;
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of Featured and Benefit Section CSS  ======*/
+/*=====================================================
+=            Size and Specification Section CSS          =
+=======================================================*/
+.section {
+    &-specification {
+        background-color: $prussian-blue;
+
+        .mn-title--big {
+            color: $white;
+        }
+
+        &__content {
+            margin-top: 45px;
+
+            &-table {
+                th,
+                td {
+                    border: none;
+                }
+
+                th {
+                    color: $white;
+                    font-size: $fs-small;
+                    font-weight: $fw-regular;
+                    padding: 0 10px 25px 0;
+                }
+
+                tr {
+                    td {
+                        color: $white;
+                        font-weight: $fw-semi-bold;
+                        padding: 15px 10px 0 0;
+                    }
+
+                    &:first-child {
+                        td {
+                            padding-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of Size and Specification Section CSS  ======*/
+/*=====================================================
+=            Testimonial Section CSS          =
+=======================================================*/
+.section {
+    &-review {
+        background-color: rgba($mirage, 0.05);
+        margin-top: 100px;
+
+        &__slider {
+            outline: none;
+
+            &-wrap {
+                margin-bottom: 0;
+
+                .slick {
+                    &-dots {
+                        margin-left: auto;
+                        margin-top: 27px;
+                        max-width: calc(100% - 350px);
+                        position: static;
+                        text-align: left;
+
+                        li {
+                            height: 10px;
+                            width: 10px;
+
+                            button {
+                                height: 10px;
+                                width: 10px;
+
+                                &:before {
+                                    background-color: $bermuda-gray;
+                                    border-radius: 50%;
+                                    height: 10px;
+                                    width: 10px;
+                                    content: '';
+                                    opacity: 0.3;
+                                }
+                            }
+
+                            &.slick {
+                                &-active {
+                                    button {
+                                        &:before {
+                                            background-color: $cerulean;
+                                            opacity: 0.5;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__slide {
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &-img {
+                max-width: 250px;
+            }
+
+            &-content {
+                color: $prussian-blue;
+                flex: 0 0 100%;
+                font-size: $fs-medium;
+                font-weight: $fw-semi-bold;
+                max-width: calc(100% - 350px);
+            }
+        }
+    }
+}
+
+/*=====  End of Testimonial Section CSS  ======*/
+/*=====================================================
+=            Bottom Nav CSS          =
+=======================================================*/
+.section {
+    &-project {
+        &-bottom {
+            &-nav {
+                padding: 15px 20px;
+
+                .nav {
+                    &-item {
+                        margin-right: 15px;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+
+                    &-link {
+                        color: $bermuda-gray !important;
+                        font-weight: $fw-regular;
+                        padding-left: 5px !important;
+                        padding-right: 5px !important;
+                        position: relative;
+
+                        &.active {
+                            color: $mirage !important;
+                            font-weight: $fw-semi-bold;
+
+                            &:after {
+                                opacity: 1;
+                            }
+                        }
+
+                        &:after {
+                            border-top: 2px solid $cerulean;
+                            bottom: 0;
+                            content: '';
+                            left: 0;
+                            position: absolute;
+                            opacity: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====  End of Bottom Nav CSS  ======*/
+
+/*===== Similar Project =======*/
+.section-similar-project__div {
+    .feature-image__container {
+        height: 230px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+/*===== End of Similar Project =======*/
+
+/*===== Custom CSS =======*/
+
+.clear-all-container {
+    display: none;
+}
+/*===== End if Custom CSS =======*/

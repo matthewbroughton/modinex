@@ -1,0 +1,950 @@
+.section {
+    &-similar {
+        &__title {
+            margin-bottom: 60px;
+        }
+
+        &__heading {
+            font-size: $fs-normal;
+            line-height: 28px;
+        }
+
+        &-single__link {
+            color: unset;
+
+            &:hover {
+                color: unset;
+                text-decoration: none;
+            }
+        }
+    }
+}
+/*=========================================
+=            Product Detail Accordion CSS          =
+=========================================*/
+
+.section {
+    &-acc {
+        &-pro {
+            &-section {
+                width: 100% !important;
+            }
+
+            &-detail {
+                background-color: rgba($mirage, 0.05);
+                cursor: pointer;
+                margin-bottom: 10px;
+                padding: 25px 15px;
+
+                &__title {
+                    font-size: $fs-small;
+                    line-height: 24px;
+                    padding-right: 30px;
+                    position: relative;
+                }
+
+                &__toggle {
+                    background: $mirage;
+                    border-radius: 50%;
+                    height: 30px;
+                    opacity: 0.45;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30px;
+
+                    &:after,
+                    &:before {
+                        content: '';
+                        border-bottom: 2px solid $white;
+                        left: 0;
+                        margin: 0 auto;
+                        position: absolute;
+                        right: 0;
+                        top: 14px;
+                        transition: 0.3s linear all;
+                        width: 16px;
+                    }
+
+                    &:after {
+                        transform: rotate(90deg);
+                    }
+
+                    &.active {
+                        &:after {
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====  End of Product Detail Accordion CSS  ======*/
+
+
+/*=========================================
+=            Gallery Section CSS          =
+=========================================*/
+
+.section {
+    &-gallery {
+        &__row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__col {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            &--0 {
+                flex: 0 0 56.14%;
+                max-width: 56.14%;
+            }
+
+            &--1 {
+                flex: 0 0 43.86%;
+                max-width: 43.86%;
+            }
+
+            &--3 {
+                flex: 0 0 36.1%;
+                max-width: 36.1%;
+            }
+
+            &--4 {
+                flex: 0 0 63.9%;
+                max-width: 63.9%;
+            }
+        }
+
+        &--overlap {
+            &__col {
+                &--overlap {
+                    position: relative;
+                    transform: translate(60px, -90px);
+                    z-index: 5;
+                }
+            }
+
+            &-sec {
+                padding-bottom: 0;
+
+                &__scale {
+                    margin-bottom: -1px;
+                    transform: scale(2);
+                    transform-origin: bottom right;
+                }
+
+                &__col {
+                    &--overlap {
+                        transform: translateY(-150px);
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            &--overlap {
+                margin-top: -70px;
+            }
+        }
+    }
+}
+
+
+/*=====  End of Gallery Section CSS  ======*/
+
+
+/*=========================================
+=            Section Description CSS          =
+=========================================*/
+
+.section {
+    &-des {
+        margin-top: 60px;
+
+        &__sidebar {
+            &-img {
+                background-color: transparent;
+                padding: 0;
+            }
+
+            &-title {
+                background-color: $mirage;
+                color: $white;
+                display: none;
+                font-size: $fs-medium;
+                margin: 20px 0 0;
+                padding: 15px 10px;
+            }
+        }
+
+        &__intro {
+            margin-bottom: 70px;
+        }
+
+        &__option {
+            margin-bottom: 50px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &-heading {
+                font-size: $fs-normal;
+                margin-bottom: 10px;
+            }
+
+            &-list {
+                border: 1px solid rgba($oslo-gray, 0.1);
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 0;
+
+                &-item {
+                    align-items: center;
+                    border: 1px solid rgba($oslo-gray, 0.1);
+                    cursor: pointer;
+                    display: flex;
+                    flex: 0 0 33.33%;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    max-width: 33.33%;
+                    min-height: 150px;
+                    padding: 20px 20px;
+                    position: relative;
+                    text-align: center;
+
+                    &--number {
+                        justify-content: center;
+                    }
+
+                    &.active {
+                        border: solid 2px $mirage;
+
+                        .section-des__option-list-check {
+                            display: block;
+                        }
+
+                        &:before {
+                            background-color: $scooter;
+                            background-image: url('../img/check.png');
+                            background-position: 50%;
+                            background-repeat: no-repeat;
+                            border-radius: 100%;
+                            content: '';
+                            height: 25px;
+                            left: 10px;
+                            position: absolute;
+                            top: 10px;
+                            width: 25px;
+                        }
+                    }
+
+                    &.option-disabled {
+                        background-color: lightgrey;
+                        cursor: auto !important;
+                    }
+                }
+
+                &-number {
+                    font-size: $fs-medium;
+                    margin-bottom: -10px;
+                    text-transform: uppercase;
+                }
+
+                &-title {
+                    font-size: $fs-xsmall;
+                    font-weight: $fw-regular;
+                    line-height: 18px;
+                    margin: 20px 0 0;
+                }
+
+                &-check {
+                    background: $scooter;
+                    border-radius: 50%;
+                    display: none;
+                    height: 28px;
+                    left: 8px;
+                    line-height: 27px;
+                    position: absolute;
+                    text-align: center;
+                    top: 8px;
+                    width: 28px;
+                }
+            }
+        }
+
+        &__product {
+            &-description {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.selected_options_table {
+    margin: 30px 0;
+    width: 100%;
+    
+    tr {
+        border-bottom: solid 2px rgba($oslo-gray, 0);
+        vertical-align: top;
+
+        .ot_title {
+            color: $bermuda-gray;
+            font-weight: $fw-normal;
+            min-width: 150px;
+        }
+
+        .ot_value {
+            color: $mirage;
+        }
+    }
+}
+
+
+/*=====  End of Section Description CSS  ======*/
+
+
+/*=========================================
+=            Featured and Benefit Section CSS          =
+=========================================*/
+
+.section {
+    &-featured {
+        &__title {
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        &__content {
+            margin-top: 100px;
+        }
+
+        &__feature {
+            display: flex;
+            flex-wrap: wrap;
+
+            &-list {
+                align-items: flex-start;
+                display: flex;
+                flex: 0 0 49%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 49%;
+                padding-right: 10px;
+
+                &:nth-child(n+3) {
+                    margin-top: 20px;
+                }
+
+                img {
+                    max-width: 50px;
+                }
+
+                .section-featured__feature-wrap {
+                    flex: 0 0 100%;
+                    max-width: calc(100% - 70px);
+                    text-align: left;
+                }
+            }
+
+            &-icon {
+                max-width: 50px;
+            }
+
+            &-title {
+                color: $cerulean;
+                font-size: $fs-xsmall;
+                font-weight: $fw-bold;
+                margin-top: 0;
+
+                a {
+                    color: $cerulean;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        &__benefit {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &-list {
+                color: $prussian-blue;
+                flex: 0 0 100%;
+                font-size: $fs-small;
+                font-weight: $fw-semi-bold;
+                line-height: 24px;
+                margin-bottom: 10px;
+                max-width: 100%;
+                position: relative;
+                padding-left: 15px;
+
+                &:before {
+                    background-color: $bermuda-gray;
+                    border-radius: 50%;
+                    content: '';
+                    display: block;
+                    height: 6px;
+                    left: 0;
+                    position: absolute;
+                    top: 11px;
+                    width: 6px;
+                }
+            }
+        }
+    }
+}
+
+
+/*=====  End of Featured and Benefit Section CSS  ======*/
+
+
+/*=====================================================
+=            Size and Specification Section CSS          =
+=======================================================*/
+
+.section {
+    &-specification {
+        background-color: $prussian-blue;
+
+        .mn-title--big {
+            color: $white;
+        }
+
+        &__content {
+            margin-top: 45px;
+
+            &-table {
+                th,
+                td {
+                    border: none;
+                }
+
+                th {
+                    color: $white;
+                    font-size: $fs-small;
+                    font-weight: $fw-regular;
+                    min-width: 160px;
+                    padding: 0 10px 25px 0;
+                }
+
+                tr {
+                    td {
+                        color: $white;
+                        font-weight: $fw-semi-bold;
+                        padding: 15px 10px 0 0;
+                    }
+
+                    &:first-child {
+                        td {
+                            padding-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====  End of Size and Specification Section CSS  ======*/
+
+
+/*=====================================================
+=            Download Section CSS          =
+=======================================================*/
+
+.section {
+    &-download {
+        &__list {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 0 0;
+
+            &-item {
+                background: $cerulean;
+                flex: 0 0 19%;
+                margin: 20px 5px;
+                max-width: 19%;
+                padding: 20px;
+                text-align: center;
+            }
+
+            &-title {
+                color: $white;
+                font-size: $fs-small;
+                font-weight: $fw-regular;
+                margin: 15px 0 0;
+            }
+
+            &-btn {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+
+/*=====  End of Download Section CSS  ======*/
+
+
+/*=====================================================
+=            Testimonial Section CSS          =
+=======================================================*/
+
+.woocommerce {
+    .section {
+        &-review {
+            background-color: rgba($mirage, 0.05);
+            margin-top: 100px;
+
+            &__slider {
+                outline: none;
+
+                &-wrap {
+                    margin-bottom: 0;
+
+                    .slick {
+                        &-dots {
+                            margin-left: auto;
+                            margin-top: 27px;
+                            max-width: calc(100% - 350px);
+                            position: static;
+                            text-align: left;
+
+                            li {
+                                height: 10px;
+                                width: 10px;
+
+                                button {
+                                    height: 10px;
+                                    width: 10px;
+
+                                    &:before {
+                                        background-color: $bermuda-gray;
+                                        border-radius: 50%;
+                                        height: 10px;
+                                        width: 10px;
+                                        content: '';
+                                        opacity: 0.3;
+                                    }
+                                }
+
+                                &.slick {
+                                    &-active {
+                                        button {
+                                            &:before {
+                                                background-color: $cerulean;
+                                                opacity: 0.5;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__slide {
+                align-items: flex-start;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                &-img {
+                    max-width: 250px;
+                }
+
+                &-content {
+                    color: $prussian-blue;
+                    flex: 0 0 100%;
+                    font-size: $fs-medium;
+                    font-weight: $fw-semi-bold;
+                    max-width: calc(100% - 350px);
+                }
+            }
+        }
+
+        &-br {
+            &-banner {
+                box-sizing: content-box;
+                margin-bottom: -60px;
+                max-height: 500px;
+                position: relative;
+                overflow: hidden;
+
+                &__img {
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 500px;
+                    position: relative;
+                }
+            }
+        }
+    }
+    .post-navigation {
+        display: none;
+    }
+}
+
+.section-br-banner__img {
+    position: relative;
+    z-index: 0;
+    
+    &:after {
+        background-color: $atlantis;
+        bottom: 0;
+        content: '';
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+.section-br-banner {
+    z-index: 0;
+
+    .section-br-banner__content {
+        z-index: 10;
+
+        &:after {
+            content: '';
+            position: absolute;
+        }
+    }
+}
+
+
+/*=====  End of Testimonial Section CSS  ======*/
+
+
+/*=====================================================
+=            Side Form Section CSS          =
+=======================================================*/
+
+.section {
+    &-side {
+        &-form {
+            background: $white;
+            bottom: 0;
+            box-shadow: -8px 0 26px 0 rgba($bermuda-gray, 0.12);
+            height: 100vh;
+            max-width: 656px;
+            overflow-y: auto;
+            position: fixed;
+            right: 0;
+            top: 0;
+            transition: 0.3s linear all;
+            transform: translateX(120%);
+            width: 100%;
+            z-index: 5555;
+
+            &-overlay {
+                background-color: rgba($white, 0.9);
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                pointer-events: none;
+                position: fixed;
+                right: 0;
+                top: 0;
+                transition: 0.5s linear all;
+                z-index: 5554;
+            }
+
+            &__wrap {
+                padding: 30px;
+            }
+
+            &__title {
+                margin-bottom: 50px;
+                padding: 0 15px;
+            }
+
+            &__form {
+                padding: 0 15px;
+                
+                .form {
+                    &-group {
+                        position: relative;
+
+                        label {
+                            color: $mirage;
+                            font-size: $fs-xsmall;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    &-control {
+                        border: 1px solid rgba($mirage, 0.2);
+                        border-radius: 0;
+                        color: $mirage;
+                        font-size: $fs-xsmall;
+
+                        &.is {
+                            &-invalid {
+                                background-color: rgba($bittersweet, 0.1);
+                                background-image: none;
+                                border-color: $bittersweet;
+                                color: $bittersweet;
+                                padding: 0.375rem 0.75rem;
+
+                                &::placeholder {
+                                    color: $bittersweet;
+                                    opacity: 1;
+                                }
+                            }
+
+                            &-valid {
+                                background-image: none;
+                                border-color: rgba($mirage, 0.2);
+                                padding: 0.375rem 0.75rem;
+                            }
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                }
+
+                &-error {
+                    color: $bittersweet;
+                    display: inline-block !important;
+                    font-size: $fs-xsmall;
+                    font-style: normal;
+                    right: 4px;
+                    top: -2px;
+                    width: auto;
+                }
+
+                &-icon {
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+
+            &__close {
+                align-items: center;
+                cursor: pointer;
+                display: flex;
+                height: 32px;
+                position: absolute;
+                right: 42px;
+                top: 40px;
+                width: 32px;
+
+                &:after,
+                &:before {
+                    border-top: 2px solid $mirage;
+                    content: '';
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    transform: rotate(-45deg);
+                    width: 100%;
+                }
+
+                &:after {
+                    border-color: rgba($oxford-blue, 0.5);
+                    transform: rotate(45deg);
+                }
+            }
+
+            &__response {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100vh;
+
+                &-icon {
+                    margin-bottom: 45px;
+                }
+
+                &-subtitle {
+                    color: $mirage;
+                    font-size: $fs-small;
+                    margin-bottom: 5px;
+                }
+
+                &-text {
+                    font-size: $fs-xsmall;
+                    margin: 0;
+                }
+
+                &-cta {
+                    margin-top: 70px;
+                }
+            }
+
+            .selected_options_table {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .formSelectedOptions {
+                display: none;
+            }
+
+            .selectedOptionImage {
+                display: none;
+            }
+
+            .selectedEmailAttachment {
+                display: none;
+            }
+        }
+    }
+}
+
+.mn {
+    &-form {
+        &-side {
+            overflow: hidden;
+
+            .section {
+                &-side {
+                    &-form {
+                        &-overlay {
+                            opacity: 1;
+                            pointer-events: unset;
+                        }
+                    }
+                }
+            }
+
+            &--sample {
+                .section {
+                    &-side {
+                        &-form {
+                            &--sample {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--quote {
+                .section {
+                    &-side {
+                        &-form {
+                            &--quote {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--emailSpecs {
+                .section {
+                    &-side {
+                        &-form {
+                            &--emailSpecs {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====  End of Side Form Section CSS  ======*/
+
+
+/*=====================================================
+=            Bottom Nav CSS          =
+=======================================================*/
+
+.section {
+    &-project {
+        &-bottom {
+            &-nav {
+                padding: 15px 20px;
+                z-index: 9;
+
+                .nav {
+                    &-item {
+                        margin-right: 20px;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+
+                    &-link {
+                        color: $bermuda-gray !important;
+                        font-weight: $fw-regular;
+                        padding-left: 0px !important;
+                        padding-right: 0px !important;
+                        position: relative;
+
+                        &.active {
+                            color: $mirage !important;
+                            font-weight: $fw-semi-bold;
+
+                            &:after {
+                                opacity: 1;
+                            }
+                        }
+
+                        &:after {
+                            border-top: 2px solid $cerulean;
+                            bottom: 0;
+                            content: '';
+                            left: 0;
+                            position: absolute;
+                            opacity: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-cat__banner {
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
+    max-height: fit-content !important;
+
+    .section-br-banner__img {
+        height: auto;
+    }
+
+    .mn-product__cat {
+        padding: 100px 0;
+    }
+}
+
+
+/*=====  End of Bottom Nav CSS  ======*/

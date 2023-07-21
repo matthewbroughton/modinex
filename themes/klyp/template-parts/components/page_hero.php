@@ -26,7 +26,7 @@ if ($post_type == 'project') {
 }
 ?>
 <?php if ($section_show == true) : ?>
-    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> relative overflow-hidden min-h-[24rem] lg:min-h-[36rem] flex items-center -mb-px">
+    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> relative overflow-hidden min-h-[24rem] lg:min-h-[36rem] flex items-center -mb-px product-cat__banner">
         <?php
         if ($feature_image_url) {
         ?>

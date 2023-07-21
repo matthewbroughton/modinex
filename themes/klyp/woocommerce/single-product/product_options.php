@@ -91,7 +91,9 @@ foreach ($product_options_all_fields as $poKey => $product_option): ?>
                         </svg>
                     </div>
                     <?php if ($option_value['product_option_image'] != false): ?>
-                        <img src="<?= $option_value['product_option_image']; ?>" class="max-w-full mb-2">
+                        <div class="aspect-h-1 aspect-w-1">
+                            <img src="<?= $option_value['product_option_image']; ?>" class="w-full  h-full object-contain">
+                        </div>
                     <?php endif; ?>
 
                     <h5 class="product-option-title p-2 sm:p-4">

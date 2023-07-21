@@ -6,6 +6,7 @@
     $section_layout         = get_field('projects_feature_call_to_action_summary')['fh_layout_type'];
     $layout_class           = $section_layout == 'left' ? 'sm:order-last' : '';
     $divide_reverse         = $section_layout == 'left' ? 'sm:divide-x-reverse' : '';
+    $push_text              = $section_layout == 'left' ? 'ml-auto' : '';
 
         //Contents
     $feature_title           = get_field('projects_feature_call_to_action_summary')['title'];

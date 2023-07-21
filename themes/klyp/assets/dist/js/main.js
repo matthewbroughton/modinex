@@ -3970,12 +3970,12 @@ $(document).ready(function() {
     $('.mn-custom-checkbox .form-check-input').click(function() {
       window.history.pushState(null, null, pageLink);
       $('.section-product-list__heading').html('All Products');
-      $('.product-cat__banner').hide();
+      $('.product-cat__banner').slideUp();
     });
     $('.section-product__sidebar-filter-clear').click(function() {
       window.history.pushState(null, null, pageLink);
       $('.section-product-list__heading').html('All Products');
-      $('.product-cat__banner').hide();
+      $('.product-cat__banner').slideUp();
     });
   }
   /* End of function */

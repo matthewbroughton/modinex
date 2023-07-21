@@ -95,7 +95,7 @@ if (! empty($bannerImage) && ! empty($bannerTitle) && ! empty($bannerSubTitle)) 
 ======================================-->
 
 <?php if ($bannerFlag) : ?>
-    <section id="" class="relative overflow-hidden min-h-[24rem] lg:min-h-[36rem] flex items-center -mb-px">
+    <section id="" class="relative overflow-hidden min-h-[24rem] lg:min-h-[36rem] flex items-center -mb-px product-cat__banner">
         <?php
         if ($bannerImage) {
         ?>

@@ -19,12 +19,14 @@ $query = new WP_Query(array(
     'posts_per_page' => get_field('projects_per_page', 'option'),
     'post_status' => 'publish',
     'post_type' => 'project',
+    'tax_query' => array(
+        'taxonomy' => 'project_category',
+        'field' => 'term_id',
+        'terms' => get_sub_field('component_all_projects_list_category'),
+    ),
     'orderby' => 'post_date',
     'order' => 'desc'
 ));
-$maxPageNumber = $query->max_num_pages;
-$currentPageNumber = 1;
-$index = 0;
 ?>
 <?php if ($sectionShow == true) : ?>
     <section id="<?= $sectionId ?>" class="section-product-list border-x border-black mx-4 sm:mx-6 py-16 sm:py-24 lg:py-36 <?= $sectionClass ?>">
@@ -35,17 +37,11 @@ $index = 0;
                 </h2>
             </div>
             <hr class="border-t w-full my-8 border-black">
+
             <div class="flex justify-content-end -ml-8">
                 <div class="section-product-list__masonry flex-grow-0 flex-shrink-0 basis-full max-w-full project-posts-container" data-url="<?php echo admin_url('admin-ajax.php') ?>">
                 </div>
             </div>
-            <?php if ($maxPageNumber > $currentPageNumber) : ?>
-                <div class="col-12 text-center section-project-list__load-more load-more-container">
-                    <a href="javascript:void(0)" class="mn-btn project-load-more" data-maxpage="<?= ($maxPageNumber); ?>">
-                        load more
-                    </a>
-                </div>
-            <?php endif; ?>
         </div>
     </section>
 <?php endif; ?>

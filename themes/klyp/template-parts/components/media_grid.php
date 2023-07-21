@@ -1,4 +1,5 @@
 <?php
+$post_type = get_post_type();
 //Settings
 $section_show           = get_sub_field('component_media_grid_component_enabled');
 $section_id             = get_sub_field('component_media_grid_field_id');

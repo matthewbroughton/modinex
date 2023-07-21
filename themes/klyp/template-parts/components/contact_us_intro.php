@@ -1,4 +1,6 @@
 <?php
+
+$post_type = get_post_type();
 //Settings
 $section_show = get_sub_field('component_contact_us_intro_component_enabled');
 $section_id = get_sub_field('component_contact_us_intro_field_id');

@@ -1,4 +1,5 @@
 <?php
+
 //Settings
 
 if (have_rows('brand_history_repeater')) :

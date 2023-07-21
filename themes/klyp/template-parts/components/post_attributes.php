@@ -1,10 +1,10 @@
 <?php
-
+    $post_type = get_post_type();
     $component              = get_field('post_attributes_similar');
     //Settings
     $section_id             = $component['id'];
     $section_class          = $component['class'];
-    
+
     //Contents
     $default_list           = $component['post_attributes_layout_switch'];
 
@@ -42,7 +42,7 @@
                 </div>
                 <div class="section-selling__content position-relative">
                     <p class="section-similar__time--post">
-                        Published <?= get_the_date('', (isset($post->ID) ? $post->ID : $post['post']->ID)); ?> 
+                        Published <?= get_the_date('', (isset($post->ID) ? $post->ID : $post['post']->ID)); ?>
                     </p>
                     <h2 class="mn-title section-similar__heading section-similar__heading--post"><?= (isset($post->post_title) ? $post->post_title : $post['post']->post_title); ?></h2>
                 </div>

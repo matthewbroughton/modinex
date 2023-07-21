@@ -1,9 +1,10 @@
 <?php
+    $post_type = get_post_type();
     //Settings
     $section_show             = get_sub_field('component_projects_showcase_component_enabled');
     $section_id               = get_sub_field('component_projects_showcase_field_id');
     $section_class            = get_sub_field('component_projects_showcase_field_class');
-    
+
     //Contents
     $section_title            = get_sub_field('component_projects_showcase_title');
     $section_description      = get_sub_field('component_projects_showcase_feature_description');
@@ -13,9 +14,9 @@
     $section_second_cta       = get_sub_field('component_project_showcase_secondbtn_url');
     $column_repeater          = get_sub_field('component_projects_showcase_repeater');
     $feature_image            = array();
-    
+
     foreach ($column_repeater as $index => $column) {
-        $feature_image[$index] = $column['feature_image'] == true ? $column['feature_image'] : get_template_directory_uri() . '/assets/dist/img/default.jpg';    
+        $feature_image[$index] = $column['feature_image'] == true ? $column['feature_image'] : get_template_directory_uri() . '/assets/dist/img/default.jpg';
     }
 ?>
 <?php if ($section_show == true) : ?>

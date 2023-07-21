@@ -1,4 +1,5 @@
 <?php
+	$post_type = get_post_type();
 	//Settings as General Component
 	$section_show = get_sub_field('component_text_tabs_component_enabled');
 	$section_id = get_sub_field('component_text_tabs_field_id');
@@ -9,7 +10,7 @@
 ?>
 
 <?php if ($section_show == true) : ?>
-	<section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 pt-8 sm:pt-16">
+	<section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'pt-4 sm:pt-8' : 'pt-8 sm:pt-16'?>">
 		<div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-8">
 			<?php if( have_rows('component_text_tabs_tabs_repeater') ):
 			   $i = 1;

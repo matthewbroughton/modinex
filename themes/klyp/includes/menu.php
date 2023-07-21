@@ -160,7 +160,7 @@ function klyp_generate_mega_menu($name)
     foreach ($menuItems as $menuItem) {
         // Check if the current item is a top-level menu item
         if ($menuItem->menu_item_parent == 0) {
-            echo '<div class="flex items-center gap-x-2 lg:justify-center whitespace-nowrap group hover:bg-gray-100 px-4 py-2">';
+            echo '<div class="flex items-center gap-x-2 lg:justify-center whitespace-nowrap group hover:bg-sage/20 px-4 py-2">';
             echo '<a class="tracking-wide" href="' . $menuItem->url . '">' . $menuItem->title . '</a>';
 
             // Check if the top-level menu item has submenu items
@@ -176,7 +176,7 @@ function klyp_generate_mega_menu($name)
                             echo '<div class="mega-menu-column lg:pl-12">';
                             echo '<ul>';
                             echo '<li>';
-                            echo '<a class="tracking-wide font-light flex flex-col hover:bg-gray-100" href="' . $subMenuItem->url . '">';
+                            echo '<a class="tracking-wide font-light flex flex-col hover:bg-sage/20" href="' . $subMenuItem->url . '">';
                                 if (get_field('sbc_menu_item_image', $subMenuItemId)) {
                                     echo '<div class="aspect-w-16 aspect-h-10">';
                                     echo '<img src="' . get_field('sbc_menu_item_image', $subMenuItemId) . '" class="w-full h-full object-cover" alt="">';
@@ -191,12 +191,12 @@ function klyp_generate_mega_menu($name)
                                 // Store the tertiary menu items in the array
                                 $tertiaryMenuItems[$subMenuItemId] = $menuTree[$subMenuItemId];
 
-                                echo '<ul class="divide-y divide-gray-200">';
+                                echo '<ul class="divide-y divide-sage/30">';
 
                                     // output tertiary list for this second level element here.
                                     foreach ($menuTree[$subMenuItemId] as $tertiaryMenuItemId) {
                                         $tertiaryMenuItem = $menuItemsList[$tertiaryMenuItemId];
-                                        echo '<li><a class="py-2 px-4 flex hover:bg-gray-100 whitespace-normal" href="' . $tertiaryMenuItem->url . '">' . $tertiaryMenuItem->title . '</a></li>';
+                                        echo '<li><a class="py-2 px-4 flex hover:bg-sage/20 whitespace-normal" href="' . $tertiaryMenuItem->url . '">' . $tertiaryMenuItem->title . '</a></li>';
                                     }
 
                                 echo '</ul>';

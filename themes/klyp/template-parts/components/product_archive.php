@@ -170,8 +170,8 @@ $index = 0;
                     <?php wp_reset_query(); ?> -->
                 </div>
                 <div class="section-product-list__load-more">
-                    <div class="text-center">
-                        <a href="#" class="product-load-more" data-maxpage="<?= ($maxPageNumber); ?>">
+                    <div class="mt-8 text-center">
+                        <a href="#" class="product-load-more uppercase tracking-wide" data-maxpage="<?= ($maxPageNumber); ?>">
                             Load More
                         </a>
                     </div>

@@ -3,6 +3,12 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["**/*.{php, js}"],
+  safelist: [
+    {
+      pattern: /(bg|text|px|pt|pb|mx|my)-./,
+      variants: ['sm', 'md', 'lg', 'xl'],
+    },
+  ],
   theme: {
     fontFamily: {
       sans: ['neue-haas-grotesk-display', 'sans-serif'],
@@ -23,6 +29,7 @@ module.exports = {
         'sage': '#9DA687',
         'stone': '#F5F2EB',
         'concrete': '#A3AAAD',
+        'slate': '#2A2A2B',
       },
       typography: {
         DEFAULT: {

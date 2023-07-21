@@ -1,12 +1,12 @@
 <nav class="bg-white relative flex justify-between lg:divide-x divide-black border-t lg:border-t-0 border-b border-black z-20" aria-label="Global">
     <div class="flex w-24 lg:justify-center flex-grow-1 lg:flex-grow-0 lg:w-40 border-r border-black lg:border-none">
-      <a href="<?= get_home_url(); ?>" class="transition hover:bg-gray-100 w-full">
+      <a href="<?= get_home_url(); ?>" class="transition hover:bg-sage/20 w-full">
         <span class="sr-only">Modinex</span>
         <img src="<?= get_template_directory_uri() . '/assets/dist/img/logo/Modinex_Logo_Icon_Positive_Transparent_RGB.png'; ?>" alt="Modinex" class="h-16 lg:h-24 mx-auto">
       </a>
     </div>
     <div class="flex items-center justify-center flex-grow-1 px-8 mr-auto flex-shrink-0 lg:hidden">
-      <a href="tel:<?= get_field('site_phone_number', 'option'); ?>" class="transition hover:bg-gray-100 w-full">
+      <a href="tel:<?= get_field('site_phone_number', 'option'); ?>" class="transition hover:bg-sage/20 w-full">
         <span class="sr-only">Call Now on <?= get_field('site_phone_number', 'option'); ?></span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
@@ -26,8 +26,8 @@
         <?= klyp_generate_mega_menu('Global Navigation'); ?>
       </div>
         <div class="flex gap-4 self-center lg:px-4 lg:py-2">
-            <a class="border border-black flex justify-between items-center gap-2 rounded-full text-black py-2 px-4" href="<?= site_url('contact-us'); ?>"><span>Enquire Now</span></a>
-            <a class="border border-black flex justify-between items-center gap-2 rounded-full text-black py-2 px-4" href="tel:<?= get_field('site_phone_number', 'option'); ?>">
+            <a class="border border-black flex justify-between items-center gap-2 rounded-full text-black py-2 px-4 transition duration-200 hover:border-sage hover:bg-sage hover:text-white" href="<?= site_url('contact-us'); ?>"><span>Enquire Now</span></a>
+            <a class="border border-black flex justify-between items-center gap-2 rounded-full text-black py-2 px-4 transition duration-200 hover:border-sage hover:bg-sage hover:text-white" href="tel:<?= get_field('site_phone_number', 'option'); ?>">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>

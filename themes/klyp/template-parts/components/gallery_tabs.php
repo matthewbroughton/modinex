@@ -1,4 +1,6 @@
 <?php
+
+	$post_type = get_post_type();
 	//Settings as General Component
 	$section_show = get_sub_field('component_gallery_tabs_component_enabled');
 	$section_id = get_sub_field('component_gallery_tabs_field_id');

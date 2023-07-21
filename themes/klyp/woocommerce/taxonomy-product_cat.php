@@ -263,8 +263,8 @@ if (! empty($bannerImage) && ! empty($bannerTitle) && ! empty($bannerSubTitle)) 
                     <?php wp_reset_query(); ?>
                 </div>
                 <div class="section-product-list__load-more" style="<?php echo ($currentPageNumber == $maxPageNumber) ? 'display:none;' : '' ; ?>">
-                    <div class="text-center">
-                        <a href="#" class="product-load-more" data-maxpage="<?= ($maxPageNumber); ?>">
+                    <div class="mt-8 text-center">
+                        <a href="#" class="product-load-more uppercase tracking-wide" data-maxpage="<?= ($maxPageNumber); ?>">
                             load more
                         </a>
                     </div>

@@ -1,9 +1,25 @@
 <?php
+    $post_type = get_post_type();
     //Settings
     $section_show           = get_sub_field('component_latest_news_component_enabled');
     $section_id             = get_sub_field('component_latest_news_field_id');
     $section_class          = get_sub_field('component_latest_news_field_class');
     $section_layout         = get_sub_field('component_latest_news_layout_type');
+    $image_layout           = get_sub_field('component_latest_news_image_ratio');
+
+    if ($image_layout == '1:1') {
+        $image_ratio = 'aspect-w-1 aspect-h-1';
+    } elseif ($image_layout == '16:9') {
+        $image_ratio = 'aspect-w-16 aspect-h-9';
+    } elseif ($image_layout == '4:3') {
+        $image_ratio = 'aspect-w-4 aspect-h-3';
+    } elseif ($image_layout == '3:4') {
+        $image_ratio = 'aspect-w-3 aspect-h-4';
+    } elseif ($image_layout == '9:16') {
+        $image_ratio = 'aspect-w-9 aspect-h-16';
+    } else {
+        $image_ratio = '';
+    }
 
     //Contents
     $section_tile           = get_sub_field('component_latest_news_title');
@@ -36,7 +52,7 @@
                 <h3 class="text-3xl lg:text-4xl"><?= $section_tile; ?></h3>
                 <?= $section_description; ?>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black gap-8 md:-ml-8">
                 <?php
                     while ($query->have_posts()) :
                         $query->the_post();
@@ -45,9 +61,9 @@
                         $post_image_url[$index] = get_the_post_thumbnail_url(get_the_ID());
                         $post_category[$index]  = get_the_category_list(get_the_ID());
                 ?>
-                    <div class="flex flex-col gap-4 !pt-4 md:!pt-0 md:pl-4 md:first:pl-0">
+                    <div class="flex flex-col gap-4 pt-8 md:pt-0 md:pl-8">
                         <a href="<?= $post_link[$index] ?>" class="block">
-                            <div class="w-full h-64">
+                            <div class="<?= $image_ratio; ?>">
                                 <img src="<?= $post_image_url[$index]; ?>" alt="" class="w-full h-full object-cover">
                             </div>
                         </a>

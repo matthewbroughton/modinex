@@ -100,8 +100,8 @@ foreach ($level_1_categories as $level_1_category) {
                         </div>
                     </div>
                     <?php if ($maxPageNumber != $currentPageNumber) : ?>
-                        <div class="col-12 text-center section-gallery-list__load-more">
-                            <a href="javascript:void(0)" class="mn-btn gallery-load-more" data-maxpage="<?= ($maxPageNumber); ?>">
+                        <div class="mt-8 text-center section-gallery-list__load-more">
+                            <a href="javascript:void(0)" class="mn-btn gallery-load-more uppercase tracking-wide" data-maxpage="<?= ($maxPageNumber); ?>">
                                 load more
                             </a>
                         </div>

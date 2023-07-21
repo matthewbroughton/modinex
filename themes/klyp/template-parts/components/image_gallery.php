@@ -1,4 +1,5 @@
 <?php
+$post_type = get_post_type();
 //Settings
 $section_show               = get_sub_field('component_image_gallery_component_enabled');
 $section_id                 = get_sub_field('component_image_gallery_field_id');

@@ -1,4 +1,6 @@
 <?php
+
+$post_type = get_post_type();
 //Settings
 $section_show           = get_sub_field('component_feature_call_to_action_component_enabled');
 $section_id             = get_sub_field('component_feature_call_to_action_field_id');

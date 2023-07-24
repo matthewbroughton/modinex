@@ -13,9 +13,11 @@
             <div class="px-6 py-8 md:py-24 md:px-24 flex items-center">
                 <div class="flex flex-col max-w-full <?= $push_text; ?>">
                     <div class="max-w-md">
-                        <h2 class="mb-4 text-3xl">
-                            <?= $feature_title; ?>
-                        </h2>
+                        <?php if ($feature_title) : ?>
+                            <h2 class="mb-4 text-3xl">
+                                <?= $feature_title; ?>
+                            </h2>
+                        <?php endif; ?>
                         <div>
                             <?= $feature_description; ?>
                         </div>

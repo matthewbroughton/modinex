@@ -11,13 +11,15 @@ $title                  = get_sub_field('component_full_width_text_title');
 $description            = get_sub_field('component_full_width_text_description');
 ?>
 <?php if ($section_show == true) : ?>
-    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'pt-16 pb-8 -mb-8 last:mb-0' : 'py-16 sm:py-24 lg:py-36' ?>">
+    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'pt-16 pb-8 -mb-8 last:mb-0 last:pb-16' : 'py-16 sm:py-24 lg:py-36' ?>">
         <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-6 sm:px-8">
                 <div class="flex flex-col max-w-prose mx-auto">
                     <article class="prose">
-                    <<?= $type; ?> class="text-3xl mb-4">
-                        <?= $title; ?>
-                    </<?= $type; ?>>
+                    <?php if ($title) : ?>
+                        <<?= $type; ?> class="text-3xl mb-4">
+                            <?= $title; ?>
+                        </<?= $type; ?>>
+                    <?php endif; ?>
                     <?= $description; ?>
                     </article>
                 </div>

@@ -55,7 +55,7 @@ foreach ($company_repeater as $company) {
                                 </div>';
                                 if ($company['company_name']) {
                                 $company_output .= '<div class="flex flex-col gap-2">
-                                    <h3 class="text-lg">' . $company['company_name'] . '</h3>
+                                    <h3 class="text-xl">' . $company['company_name'] . '</h3>
                                     <div class="">' . $company['company_subtitle'] . '</div>
                                 </div>';
                                 }
@@ -82,7 +82,7 @@ foreach ($company_repeater as $company) {
                 </div>
                 <hr class="border-t w-full my-12 border-black">
             <?php endif; ?>
-            <div class="grid grid-cols-2 items-center lg:grid-cols-3 <?= $layout_class; ?> gap-6 sm:gap-12">
+            <div class="grid sm:grid-cols-2 items-center lg:grid-cols-3 <?= $layout_class; ?> gap-6 sm:gap-12">
                 <?= $company_output; ?>
             </div>
         </div>

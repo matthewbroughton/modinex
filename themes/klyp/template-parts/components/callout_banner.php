@@ -24,11 +24,13 @@ $feature_cta_text        = get_sub_field('component_callout_banner_cta_text');
 				<div class="<?= $layout_class; ?>">
 					<img src="<?= $feature_image_url; ?>" alt="" class="h-full object-cover w-full">
 				</div>
-				<div class="px-6 py-8 md:py-12 md:px-12 flex items-center">
+				<div class="px-6 py-8 md:py-12 md:px-12 flex items-center bg-white">
 					<div class="flex flex-col">
-						<h2 class="mb-4 text-3xl">
-							<?= $feature_tile; ?>
-						</h2>
+						<?php if ($feature_tile) : ?>
+							<h2 class="mb-4 text-3xl">
+								<?= $feature_tile; ?>
+							</h2>
+						<?php endif; ?>
 						<div>
 							<?= $feature_description; ?>
 						</div>

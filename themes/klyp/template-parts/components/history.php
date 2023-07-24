@@ -41,7 +41,7 @@ if (have_rows('brand_history_repeater')) :
 					<?= $milestone_description ?>
 				</div>
 			</div>
-			<div class="md:w-1/4 order-1 md:order-none flex flex-col py-8 sm:py-20">
+			<div class="md:w-1/4 order-1 md:order-none flex flex-col pt-8 pb-10 sm:pt-20 sm:pb-20">
 				<?php if (have_rows('brand_history_supplemental_years')) : ?>
 					<div class="md:flex-col md:justify-around md:items-end h-full hidden md:flex">
 						<?php while ( have_rows('brand_history_supplemental_years') ) : the_row(); ?>

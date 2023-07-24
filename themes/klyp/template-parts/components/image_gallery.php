@@ -12,7 +12,7 @@ $gallery_3 					= get_sub_field('3_images_layout_upload');
 ?>
 
 <?php if ($section_show == true) : ?>
-	<section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 py-16 sm:py-24 lg:py-36 section-gallery-page">
+	<section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 section-gallery-page <?=$post_type == 'post' ? 'pt-16 pb-8 -mb-8 last:mb-0 last:pb-16' : 'py-16 sm:py-24 lg:py-36' ?>"">
         <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-8">
 			<?php if ($gallery_layout == 2) : ?>
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

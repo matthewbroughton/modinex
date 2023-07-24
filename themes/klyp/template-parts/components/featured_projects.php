@@ -7,6 +7,8 @@ $section_id             = get_sub_field('component_featured_projects_field_id');
 $section_class          = get_sub_field('component_featured_projects_field_class');
 
 $title                  = get_sub_field('component_featured_projects_title');
+$show_link              = get_sub_field('component_featured_projects_link_enabled');
+$feature_link           = get_sub_field('component_featured_projects_link');
 $featured_projects 		= get_sub_field('component_featured_projects_grid_items');
 
 ?>
@@ -17,7 +19,9 @@ $featured_projects 		= get_sub_field('component_featured_projects_grid_items');
 				<h2 class="text-3xl lg:text-4xl font-light lg:max-w-screen-sm">
 					<?= $title; ?>
 				</h2>
-				<a class="flex self-start justify-start items-center gap-2 text-black" href="/projects/"><span>View all</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg></a>
+				<?php if ($show_link == 1) : ?>
+				<a class="flex self-start justify-start items-center gap-2 text-black" href="<?= $feature_link[url] ?>"><span>View all</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg></a>
+				<?php endif; ?>
 			</div>
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:divide-black md:divide-x gap-x-4 md:gap-x-0 gap-y-8 md:gap-y-12 md:-mx-8">
 				<?php if( $featured_projects ): ?>

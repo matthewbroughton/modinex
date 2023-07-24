@@ -1,4 +1,4 @@
-<div class="section-product-list__masonry-item  project-post section-project-list__masonry-item pl-8 mb-8 w-full max-w-full md:max-w-[50%] lg:max-w-[33%]" data-page="<?= $currentPageNumber ?>" data-maxpage="<?= $maxPageNumber ?>">
+<div class="section-product-list__masonry-item project-post section-project-list__masonry-item pl-8 mb-8 w-full max-w-full md:max-w-[50%] lg:max-w-[33%]" data-page="<?= $currentPageNumber ?>" data-maxpage="<?= $maxPageNumber ?>">
     <div class="position-relative">
         <a href="<?= $postLink ?>">
             <img src="<?= $postImageUrl ?>" alt="" class="img-fluid">

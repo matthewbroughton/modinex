@@ -161,7 +161,7 @@
   }
 
   .single-project ul.list-unstyled li {
-	  @apply flex flex-col md:flex-row gap-4 justify-start pt-8 first:pt-0;
+	  @apply flex flex-col md:flex-row sm:gap-4 justify-start pt-8 first:pt-0;
   }
 
   .single-project ul.list-unstyled li span:first-child {

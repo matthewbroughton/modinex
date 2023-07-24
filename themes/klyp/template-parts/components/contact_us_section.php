@@ -19,7 +19,7 @@ $current_page = get_queried_object()->post_name;
 
 ?>
 <?php if ($section_show == true) : ?>
-    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 bg-gray-50">
+    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 bg-concrete/20">
         <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 divide-black divide-y md:divide-y-0 md:divide-x">
                 <div class="flex flex-col p-6 py-16 sm:p-16 sm:pr-14 sm:pt-24">
@@ -27,7 +27,7 @@ $current_page = get_queried_object()->post_name;
                         <h3 class="text-3xl lg:text-4xl mb-4"><?= $contact_section_title; ?></h3>
                         <?= $contact_section_description; ?>
                     </div>
-                    <hr class="my-16 border-black">
+                    <hr class="my-8 md:my-16 border-black">
                     <div class="grid lg:grid-cols-2 gap-4 mb-8">
                         <?php if ($current_page != 'contact-us') { ?>
                             <div class="flex flex-col">

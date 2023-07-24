@@ -5,8 +5,8 @@ module.exports = {
   content: ["**/*.{php, js}"],
   safelist: [
     {
-      pattern: /(bg|text|px|pt|pb|mx|my)-./,
-      variants: ['sm', 'md', 'lg', 'xl'],
+      pattern: /(bg|text|px|py|pt|pb|pr|pl)-./,
+      variants: ['sm', 'md', 'lg'],
     },
   ],
   theme: {
@@ -19,16 +19,13 @@ module.exports = {
       black: '#2A2A2B',
       white: colors.white,
       gray: colors.slate,
-      green: colors.emerald,
-      purple: colors.violet,
-      yellow: colors.amber,
-      pink: colors.fuchsia,
     },
     extend: {
       colors: {
         'sage': '#9DA687',
         'stone': '#F5F2EB',
         'concrete': '#A3AAAD',
+        'charcoal': '#393A3E',
         'slate': '#2A2A2B',
       },
       typography: {

@@ -38,10 +38,10 @@
     $column_repeater        = get_sub_field('component_horizontal_columns_repeater');
 ?>
 <?php if ($section_show == true) : ?>
-    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> horizontal-columns border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'pt-16 pb-8 -mb-8 last:mb-0' : 'py-16 sm:py-24 lg:py-36' ?>">
+    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> horizontal-columns border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'pt-16 pb-8 -mb-8 last:mb-0 last:pb-16' : 'py-16 sm:py-24 lg:py-36' ?>">
         <div class="max-w-screen-xl mx-auto w-full px-8 flex flex-col gap-4">
             <?php if($title): ?>
-                <div class="flex flex-col-reverse lg:flex-row gap-4 items-center">
+                <div class="flex flex-col-reverse lg:flex-row gap-4 lg:items-center">
                     <h2 class="text-3xl lg:text-4xl font-light">
                         <?= $title; ?>
                     </h2>

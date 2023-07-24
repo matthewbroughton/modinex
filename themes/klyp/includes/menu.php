@@ -160,12 +160,12 @@ function klyp_generate_mega_menu($name)
     foreach ($menuItems as $menuItem) {
         // Check if the current item is a top-level menu item
         if ($menuItem->menu_item_parent == 0) {
-            echo '<div class="flex items-center gap-x-2 lg:justify-center whitespace-nowrap group hover:bg-sage/20 px-4 py-2">';
-            echo '<a class="tracking-wide" href="' . $menuItem->url . '">' . $menuItem->title . '</a>';
+            echo '<div class="flex items-center gap-x-2 lg:justify-center whitespace-nowrap group hover:bg-sage px-4 py-2">';
+            echo '<a class="tracking-wide group-hover:text-white" href="' . $menuItem->url . '">' . $menuItem->title . '</a>';
 
             // Check if the top-level menu item has submenu items
             if (!empty($menuTree[$menuItem->ID])) {
-                echo '<svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                echo '<svg class="h-5 w-5 flex-none group-hover:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                   </svg>';
                 echo '<div class="absolute inset-x-0 top-[calc(100%+1px)] -z-10 bg-white opacity-0 transform transition duration-200 -translate-y-full group-hover:opacity-100 group-hover:translate-y-0 border-b border-black">';
@@ -176,7 +176,7 @@ function klyp_generate_mega_menu($name)
                             echo '<div class="mega-menu-column lg:pl-12">';
                             echo '<ul>';
                             echo '<li>';
-                            echo '<a class="tracking-wide font-light flex flex-col hover:bg-sage/20" href="' . $subMenuItem->url . '">';
+                            echo '<a class="tracking-wide font-light flex flex-col hover:bg-sage hover:text-white" href="' . $subMenuItem->url . '">';
                                 if (get_field('sbc_menu_item_image', $subMenuItemId)) {
                                     echo '<div class="aspect-w-16 aspect-h-10">';
                                     echo '<img src="' . get_field('sbc_menu_item_image', $subMenuItemId) . '" class="w-full h-full object-cover" alt="">';
@@ -196,7 +196,7 @@ function klyp_generate_mega_menu($name)
                                     // output tertiary list for this second level element here.
                                     foreach ($menuTree[$subMenuItemId] as $tertiaryMenuItemId) {
                                         $tertiaryMenuItem = $menuItemsList[$tertiaryMenuItemId];
-                                        echo '<li><a class="py-2 px-4 flex hover:bg-sage/20 whitespace-normal" href="' . $tertiaryMenuItem->url . '">' . $tertiaryMenuItem->title . '</a></li>';
+                                        echo '<li><a class="py-2 px-4 flex hover:bg-sage hover:text-white whitespace-normal" href="' . $tertiaryMenuItem->url . '">' . $tertiaryMenuItem->title . '</a></li>';
                                     }
 
                                 echo '</ul>';

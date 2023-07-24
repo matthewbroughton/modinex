@@ -64,7 +64,7 @@ $has_section = array();
                             <dl class="divide-y divide-gray-100 selected_options">
                             </dl>
                             <?php if (get_field('email_me_specs_shortcode', 'option') != '') : ?>
-                                <a href="#" class="section-project-bottom-nav__btn-form emailSpecs-form btn--hide text-black border-black rounded-full border py-2 px-4" data-btn="emailSpecs-form">
+                                <a href="#" class="section-project-bottom-nav__btn-form emailSpecs-form btn--hide text-black border-black rounded-full border py-2 px-4 transition hover:text-white hover:bg-sage hover:border-sage" data-btn="emailSpecs-form">
                                     Email Me Specs
                                 </a>
                             <?php endif; ?>

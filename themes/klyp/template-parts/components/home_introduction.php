@@ -36,6 +36,7 @@ if ($post_type == 'project') {
     $title = get_sub_field('component_home_introduction_title');
     $subtitle = get_sub_field('component_home_introduction_subtitle');
     $byline = get_sub_field('component_home_introduction_byline');
+    $logo = get_sub_field('component_home_introduction_show_logo');
     $divider = get_sub_field('component_home_introduction_show_divider');
     $divider_class = $divider == 1 ? '' : 'mb-12';
 
@@ -55,14 +56,18 @@ if ($post_type == 'project') {
 <?php if ($section_show == true) : ?>
     <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 py-16 sm:py-24">
         <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-8">
-            <div class="flex flex-col-reverse lg:flex-row gap-4 items-center justify-between <?= $divider_class  ?>">
-                <h2 class="text-3xl lg:text-4xl font-light lg:max-w-screen-sm">
-                    <?= $title; ?>
-                </h2>
-                <div class="w-48 self-start">
-                    <img src="<?= get_stylesheet_directory_uri(); ?>/assets/dist/img/logo/Modinex_Logo_Wordmark_Positive_Transparent_RGB.png" alt="Modinex word mark in dark grey">
+            <?php if($title) : ?>
+                <div class="flex flex-col-reverse lg:flex-row gap-4 items-center justify-between <?= $divider_class  ?>">
+                    <h2 class="text-3xl lg:text-4xl font-light lg:max-w-screen-sm">
+                        <?= $title; ?>
+                    </h2>
+                    <?php if($logo == 1) : ?>
+                    <div class="w-48 self-start">
+                        <img src="<?= get_stylesheet_directory_uri(); ?>/assets/dist/img/logo/Modinex_Logo_Wordmark_Positive_Transparent_RGB.png" alt="Modinex word mark in dark grey">
+                    </div>
+                    <?php endif ?>
                 </div>
-            </div>
+            <?php endif; ?>
             <?php if ($divider) : ?>
                 <hr class="border-t w-full my-12 md:my-16 border-black">
             <?php endif; ?>

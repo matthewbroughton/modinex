@@ -115,9 +115,9 @@ endif;
     <div class="form-inline my-2 my-lg-0 justify-content-start section-project-bottom-nav__btn">
         <h3 class="text-3xl mt-12 mb-8">Step <?= $finalStepCounter; ?>: Start Building Your Design</h3>
         <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#" class="text-black border-black rounded-full border py-2 px-4 section-project-bottom-nav__btn-form emailSpecs-form clickable_email" data-btn="emailSpecs-form">Email Me Specs</a>
-            <a href="#" class="text-black border-black rounded-full border py-2 px-4 section-project-bottom-nav__btn-form clickable_sample" data-btn="sample-form">Request Sample</a>
-            <a href="#" class="text-black border-black rounded-full border py-2 px-4 section-project-bottom-nav__btn-form clickable_quote" data-btn="quote-form">Request Quote </a>
+            <a href="#" class="text-black border-black rounded-full border py-2 px-4 transition hover:text-white hover:bg-sage hover:border-sage section-project-bottom-nav__btn-form emailSpecs-form clickable_email" data-btn="emailSpecs-form">Email Me Specs</a>
+            <a href="#" class="text-black border-black rounded-full border py-2 px-4 transition hover:text-white hover:bg-sage hover:border-sage section-project-bottom-nav__btn-form clickable_sample" data-btn="sample-form">Request Sample</a>
+            <a href="#" class="text-black border-black rounded-full border py-2 px-4 transition hover:text-white hover:bg-sage hover:border-sage section-project-bottom-nav__btn-form clickable_quote" data-btn="quote-form">Request Quote </a>
         </div>
     </div>
 <?php

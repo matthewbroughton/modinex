@@ -21,8 +21,8 @@ $feature_cta_url        = get_sub_field('component_feature_call_to_action_cta_ur
 $feature_cta_text        = get_sub_field('component_feature_call_to_action_cta_text');
 ?>
 <?php if ($section_show == true) : ?>
-    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 divide-black divide-y sm:divide-y-0 sm:divide-x <?= $divide_reverse; ?>">
+    <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 <?=$post_type == 'post' ? 'py-16' : '' ?>">
+        <div class="grid grid-cols-1 sm:grid-cols-2 divide-black <?= $post_type == 'post' ? 'max-w-screen-lg xl:max-w-screen-xl mx-auto w-full' : 'divide-y sm:divide-y-0 sm:divide-x ' . $divide_reverse; ?>">
             <div class="<?= $layout_class; ?>">
                 <?php if ($feature_video_enabled === true) : ?>
                     <div class="embed-container">

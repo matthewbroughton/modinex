@@ -16,7 +16,7 @@ $blogs_query = new WP_Query(array(
 
 <section class="border-x border-black mx-4 sm:mx-6 py-16 sm:py-24 lg:py-36">
     <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-8">
-        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 xl:gap-12 blog_posts_container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-12 blog_posts_container">
             <?php while ($blogs_query->have_posts()) : ?>
                 <?php
                 $blogs_query->the_post();

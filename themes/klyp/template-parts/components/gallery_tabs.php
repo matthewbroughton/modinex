@@ -34,7 +34,10 @@
 										$content = get_sub_field('component_gallery_tabs_tabs_repeater_content');
 								?>
 
-								<button id="tab-<?php echo $uniqueId?>-<?php echo $i; ?>" class="before:content-['–'] text-left focus-visible:ring-2 ring-offset-1 focus-visible:outline-0 <?=$i === 1 ? 'text-black' : 'text-gray-400'?>" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-<?php echo $uniqueId?>-<?php echo $i; ?>">
+								<button id="tab-<?php echo $uniqueId?>-<?php echo $i; ?>" class="text-left flex items-center gap-2 focus-visible:ring-2 ring-offset-1 focus-visible:outline-0 <?=$i === 1 ? 'text-black' : 'text-gray-400'?>" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-<?php echo $uniqueId?>-<?php echo $i; ?>">
+								  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 flex-shrink-0">
+									<path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+								  </svg>
 								  <?= $header ?>
 								</button>
 
@@ -59,7 +62,7 @@
 							<div id="tabpanel-<?php echo $uniqueId?>-<?php echo $i ?>" role="tabpanel" tabindex="0" aria-labelledby="tab-<?php echo $uniqueId?>-<?php echo $i ?>" class="<?=$i != 1 ? 'is-hidden' : ''?>">
 								<div class="main-carousel">
 									<?php foreach( $gallery as $gallery_id ): ?>
-										<div class="carousel-cell mr-4 w-full h-[31.25rem]">
+										<div class="carousel-cell mr-4 w-full h-full">
 											<img class="h-full w-full object-contain object-center" src="<?php echo esc_url($gallery_id['url']); ?>" alt="<?php echo esc_attr($gallery_id['alt']); ?>" />
 										</div>
 									<?php endforeach; ?>

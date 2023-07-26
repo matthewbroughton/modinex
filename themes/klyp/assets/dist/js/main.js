@@ -4146,7 +4146,14 @@ $(document).ready(function() {
   $('.main-carousel').flickity({
     // options
     cellAlign: 'left',
-    contain: true
+    setGallerySize: false,
+    contain: true,
+    arrowShape: {
+      x0: 10,
+      x1: 60, y1: 50,
+      x2: 60, y2: 45,
+      x3: 15
+    }
   });
 });
 $(document).ready(function() {
@@ -4400,10 +4407,8 @@ $(document).ready(function() {
       var tabPanel = this.tabpanels[i];
       var carousel = tabPanel.querySelector('.main-carousel');
 
+
       if (currentTab === tab) {
-        var carousel = document.querySelector('.main-carousel');
-        var flkty = new Flickity( carousel );
-        console.log(carousel);
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
         tab.classList.remove('text-gray-400');
@@ -4413,7 +4418,6 @@ $(document).ready(function() {
         if (carousel) {
           carousel.style.display = 'block';
           var flkty = new Flickity(carousel);
-          console.log(flkty);
           flkty.resize();
         }
 

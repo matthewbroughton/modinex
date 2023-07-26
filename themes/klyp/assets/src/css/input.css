@@ -71,6 +71,10 @@
     @apply hidden;
   }
 
+  .main-carousel {
+    @apply h-[31.25rem];
+  }
+
   /* Product Settings */
 
   .woocommerce-page.single-product .entry-header {
@@ -187,6 +191,23 @@
     height: 100vh;
     height: -webkit-fill-available;
   }
+}
+
+.flickity-page-dots {
+  width: auto;
+  left: 44px;
+}
+
+.flickity-page-dots .dot {
+  width: 6px;
+  height: 6px;
+  margin: 0 2px;
+}
+
+.flickity-button { border-radius: 0; transition: all 300ms ease-in-out; }
+.flickity-button:hover {
+  background: #9DA687;
+  color: white;
 }
 
 .wpcf7-submit {

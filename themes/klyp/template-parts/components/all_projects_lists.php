@@ -8,6 +8,7 @@ $sectionClass          = get_sub_field('component_all_projects_lists_field_class
 
 //Contents
 $featureTitle           = get_sub_field('component_all_projects_list_title');
+$taxonomy = get_sub_field('component_all_projects_list_category');
 
 // Get project categories - top level
 $level1Categories = get_terms(array(
@@ -21,6 +22,14 @@ $query = new WP_Query(array(
     'posts_per_page' => get_field('projects_per_page', 'option'),
     'post_status' => 'publish',
     'post_type' => 'project',
+    'tax_query'             => array(
+        array(
+            'taxonomy'      => 'project_category',
+            'field'         => 'term_id',
+            'terms'         => $taxonomy,
+            'operator'      => 'IN',
+        ),
+    ),
     'orderby' => 'post_date',
     'order' => 'desc'
 ));
@@ -35,8 +44,21 @@ $index = 0;
                 <h2 class="text-3xl lg:text-4xl">
                     <?= $featureTitle ?>
                 </h2>
+                <h3><?php print_r($taxonomy); ?></h3>
             </div>
             <hr class="border-t w-full my-8 border-black">
+            <?php
+            $maxPageNumber = $query->max_num_pages;
+            while ($query->have_posts()) {
+                $query->the_post();
+                $postTitle     = get_the_title();
+                $postLink      = get_permalink(get_the_ID());
+                $postImageUrl = get_the_post_thumbnail_url(get_the_ID());
+                require(get_template_directory() . '/template-parts/components/partial_projects_lists.php');
+                $index++;
+            }
+            wp_reset_query();
+            ?>
             <div class="flex justify-content-end -ml-8">
                 <div class="section-product-list__masonry flex-grow-0 flex-shrink-0 basis-full max-w-full project-posts-container" data-url="<?php echo admin_url('admin-ajax.php') ?>">
                 </div>

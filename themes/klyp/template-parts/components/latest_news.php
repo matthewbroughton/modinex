@@ -48,10 +48,14 @@
 <?php if ($section_show == true) : ?>
     <section id="<?= $section_id; ?>" class="<?= $section_class; ?> border-x border-black mx-4 sm:mx-6 py-16 sm:py-24 lg:py-36">
         <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto w-full px-8 flex flex-col gap-4">
+            <?php if($section_tile) : ?>
             <div class="mb-4">
                 <h3 class="text-3xl lg:text-4xl"><?= $section_tile; ?></h3>
+                <?php if ($section_description) : ?>
                 <?= $section_description; ?>
+                <?php endif; ?>
             </div>
+            <?php endif; ?>
             <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black gap-8 md:-ml-8">
                 <?php
                     while ($query->have_posts()) :

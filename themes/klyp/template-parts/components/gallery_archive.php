@@ -89,7 +89,53 @@ foreach ($level_1_categories as $level_1_category) {
                     </div>
                 </div>
                 <div class="divide-y accordion">
+                    <?php foreach ($level_1_categories as $level_1_category) :
+                        if (in_array($level_1_category->slug, array ('space', 'uncategorized'))) continue ;
 
+                        $level_2_categories = get_terms(array(
+                            'taxonomy' => 'product_cat',
+                            'child_of' => $level_1_category->term_id,
+                        ));
+
+                        //If we have $_GET request, set the accordion to open
+                        $show = isset($sanitized_get[$level_1_category->slug]) ? 'show' : '';
+                        ?>
+                        <div class="py-4 accordion-trigger">
+                            <button type="button" id="button-<?= $level_1_category->slug; ?>" class="flex w-full py-2 flex justify-between tracking-wide" data-product-cat="<?= $level_1_category->slug; ?>" aria-controls="filter-<?= $level_1_category->slug; ?>" aria-expanded="false">
+                                <?= $level_1_category->name; ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="pl-2 pb-4 multi-collapse section-product__sidebar-acc-content <?= $show; ?>"  role="region" aria-labelledby="button-<?= $level_1_category->slug; ?>" id="filter-<?= $level_1_category->slug; ?>" hidden>
+                                <form class="section-product__sidebar-form space-y-2">
+                                    <?php foreach ($level_2_categories as $level_2_category) : ?>
+                                        <?php
+                                        //If the value matches $_GET value, mark checkbox as checked
+                                        $label_active = '';
+                                        $checked = '';
+
+                                        if (isset($sanitized_get[$level_1_category->slug])) {
+                                            $single_values = explode(',', $sanitized_get[$level_1_category->slug]);
+                                            foreach ($single_values as $single_value) {
+                                                if ($single_value == $level_2_category->term_id) {
+                                                    $label_active = 'active';
+                                                    $checked = 'checked';
+                                                }
+                                            }
+                                        }
+                                        ?>
+                                        <div class="form-check position-relative product__filter__option cursor-pointer tracking-wide">
+                                            <label class="form-check-label flex items-start mn-custom-checkbox <?= $label_active; ?>" for="<?= $level_2_category->slug; ?>">
+                                                <input type="checkbox" id="<?= $level_2_category->slug; ?>" class="form-check-input mt-1 mr-3 text-sage" <?= $checked; ?> data-value="<?= $level_2_category->term_id; ?>">
+                                                <?= $level_2_category->name; ?>
+                                            </label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </form>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="border-t border-black md:hidden bg-white">
                     <a id="close-filter" href="#" class="flex justify-center items-center text-base py-4">

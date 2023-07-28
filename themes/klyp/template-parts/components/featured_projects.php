@@ -6,6 +6,31 @@ $section_show           = get_sub_field('component_featured_projects_component_e
 $section_id             = get_sub_field('component_featured_projects_field_id');
 $section_class          = get_sub_field('component_featured_projects_field_class');
 
+$section_layout         = get_sub_field('component_featured_projects_layout');
+
+if ($section_layout == 'two') {
+	$layout_class = 'md:grid-cols-2 hc2';
+} elseif ($section_layout == 'three') {
+	$layout_class = 'lg:grid-cols-3 hc3';
+} elseif ($section_layout == 'four') {
+	$layout_class = 'lg:grid-cols-4 hc4';
+}
+
+$image_layout           = get_sub_field('component_horizontal_columns_image_ratio');
+if ($image_layout == '1:1') {
+	$image_ratio = 'aspect-w-1 aspect-h-1';
+} elseif ($image_layout == '16:9') {
+	$image_ratio = 'aspect-w-16 aspect-h-9';
+} elseif ($image_layout == '4:3') {
+	$image_ratio = 'aspect-w-4 aspect-h-3';
+} elseif ($image_layout == '3:4') {
+	$image_ratio = 'aspect-w-3 aspect-h-4';
+} elseif ($image_layout == '9:16') {
+	$image_ratio = 'aspect-w-9 aspect-h-16';
+} else {
+	$image_ratio = '';
+}
+
 $title                  = get_sub_field('component_featured_projects_title');
 $show_link              = get_sub_field('component_featured_projects_link_enabled');
 $feature_link           = get_sub_field('component_featured_projects_link');
@@ -23,7 +48,7 @@ $featured_projects 		= get_sub_field('component_featured_projects_grid_items');
 				<a class="flex self-start justify-start items-center gap-2 text-black" href="<?= $feature_link[url] ?>"><span>View all</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg></a>
 				<?php endif; ?>
 			</div>
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:divide-black md:divide-x gap-x-4 md:gap-x-0 gap-y-8 md:gap-y-12 md:-mx-8">
+			<div class="grid grid-cols-1 <?= $layout_class; ?> divide-y divide-black md:divide-y-0 gap-8 md:-ml-8">
 				<?php if( $featured_projects ): ?>
 					<?php foreach($featured_projects as $projects ):
 						$permalink = get_permalink( $projects->ID );
@@ -32,10 +57,10 @@ $featured_projects 		= get_sub_field('component_featured_projects_grid_items');
 						$location = get_field( 'project_location', $projects->ID );
 						$year = get_field( 'project_year', $projects->ID );
 					?>
-						<div class="md:px-8">
+						<div class="hc-item pt-8 first:pt-0 md:pt-0 md:pl-8 flex flex-col gap-8 md:first:border-l-0 md:border-l md:border-black">
 								<a href="<?= $permalink ?>">
 									<?php if ($img) : ?>
-									<div class="w-full aspect-w-16 aspect-h-9 mb-4">
+									<div class="<?= $image_ratio; ?> mb-4">
 										<img src="<?= $img ?>" alt="" class="h-full w-full object-cover">
 									</div>
 									<?php endif; ?>
